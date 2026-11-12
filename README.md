@@ -4,7 +4,7 @@ A modern portfolio landing page concept for a fictional home repair and maintena
 
 ## Stack
 
-- React 19 + TypeScript 7
+- React 19 + TypeScript 6
 - Vite 8
 - Tailwind CSS 4
 - Lucide React

@@ -22,7 +22,6 @@ function ServiceCard({ service }: { service: Service }) {
   return (
     <article className={`service-card service-card--${service.variant} service-card--${service.number}`}>
       <div className="service-card__top">
-        <span className="service-card__number">{service.number} / 05</span>
         <span className="service-card__icon" aria-hidden="true"><Icon size={23} strokeWidth={1.65} /></span>
       </div>
       <div className="service-card__content">
@@ -62,7 +61,6 @@ function Services() {
           </div>
           <a href="#contacts">Задать вопрос <ArrowUpRight size={17} /></a>
         </aside>
-        <div className="services-footnote"><span>FIXORA HOME / НАПРАВЛЕНИЯ РАБОТ</span><span>01 — 05</span></div>
       </div>
     </section>
   )

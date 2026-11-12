@@ -2,25 +2,21 @@ import { ArrowUpRight, ClipboardList, MessageCircle, CalendarClock, CheckCheck }
 
 const steps = [
   {
-    number: '01',
     title: 'Расскажите о задаче',
     description: 'Опишите, что нужно сделать. Можно выбрать услугу или просто задать вопрос.',
     icon: MessageCircle,
   },
   {
-    number: '02',
     title: 'Обсудим детали',
     description: 'Уточним объём работ, важные нюансы и ответим на ваши вопросы.',
     icon: ClipboardList,
   },
   {
-    number: '03',
     title: 'Согласуем время',
     description: 'Договоримся о подходящем времени и подтвердим, что именно предстоит сделать.',
     icon: CalendarClock,
   },
   {
-    number: '04',
     title: 'Выполним работу',
     description: 'Приступим к согласованным задачам. Дополнительные работы сначала обсудим отдельно.',
     icon: CheckCheck,
@@ -42,10 +38,9 @@ function Process() {
           </div>
         </div>
         <ol className="process-steps">
-          {steps.map(({ number, title, description, icon: Icon }) => (
-            <li className="process-step" key={number}>
+          {steps.map(({ title, description, icon: Icon }) => (
+            <li className="process-step" key={title}>
               <div className="process-step__top">
-                <span className="process-step__number">{number}</span>
                 <span className="process-step__icon"><Icon size={23} strokeWidth={1.6} aria-hidden="true" /></span>
               </div>
               <div className="process-step__content">
@@ -56,10 +51,6 @@ function Process() {
             </li>
           ))}
         </ol>
-        <div className="process-footnote">
-          <span>ПОНЯТНЫЙ ПУТЬ К РЕШЕНИЮ</span>
-          <span>01 — 04</span>
-        </div>
       </div>
     </section>
   )

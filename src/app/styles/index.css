@@ -162,8 +162,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 620px) {
   .services-section { padding: 76px 22px 28px; }
   .services-heading h2 { font-size: clamp(40px, 10vw, 54px); }
-  .services-grid { grid-template-columns: 1fr; gap: 10px; }
-  .service-card, .service-card--01, .service-card--02, .services-aside { min-height: 310px; grid-column: auto; padding: 22px; }
+  .services-grid { display: grid; width: 100%; min-width: 0; grid-template-columns: minmax(0, 1fr); grid-auto-flow: row; gap: 10px; }
+  .services-grid > .service-card { width: 100%; min-width: 0; max-width: 100%; min-height: 310px; grid-column: 1 / -1; padding: 22px; }
   .service-card--01 { min-height: 350px; }
   .service-card__content h3 { font-size: 28px; }
   .service-card__content p { font-size: 14px; }

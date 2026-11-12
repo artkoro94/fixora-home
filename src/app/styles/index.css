@@ -175,29 +175,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 
-/* Service help drawer */
-.services-section { position: relative; }
-.service-help-trigger { position: absolute; z-index: 30; top: 50%; right: 0; display: inline-flex; align-items: center; gap: 11px; padding: 16px 18px; border: 0; border-radius: 4px 0 0 4px; background: #d7f36a; color: #202d28; box-shadow: 0 8px 28px rgb(32 45 40 / 14%); cursor: pointer; font: inherit; font-size: 13px; font-weight: 800; white-space: nowrap; transform: translateY(-50%); transition: transform .25s ease, opacity .2s ease; }
-.service-help-trigger:hover { transform: translate(-4px, -50%); }
-.service-help-trigger--hidden { opacity: 0; pointer-events: none; transform: translate(100%, -50%); }
-.service-help-panel { position: absolute; z-index: 31; top: 50%; right: 20px; width: min(390px, calc(100% - 40px)); padding: 28px; border: 1px solid rgb(32 45 40 / 10%); background: #f5f3ec; box-shadow: 0 22px 70px rgb(32 45 40 / 22%); transform: translateY(-50%); animation: service-help-enter .28s ease both; }
-.service-help-panel__top { display: flex; align-items: center; justify-content: space-between; }
-.service-help-panel__eyebrow { color: rgb(32 45 40 / 52%); font-size: 10px; font-weight: 800; letter-spacing: 1.6px; }
-.service-help-panel__close { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid rgb(32 45 40 / 18%); border-radius: 50%; background: transparent; color: #202d28; cursor: pointer; }
-.service-help-panel__icon { display: grid; width: 52px; height: 52px; margin-top: 34px; place-items: center; border-radius: 50%; background: #d7f36a; }
-.service-help-panel h3 { margin: 22px 0 10px; font-size: 27px; line-height: 1.12; letter-spacing: -.055em; }
-.service-help-panel p { margin: 0; color: rgb(32 45 40 / 68%); font-size: 15px; line-height: 1.75; }
-.service-help-panel > a { display: inline-flex; align-items: center; gap: 14px; margin-top: 28px; padding-bottom: 7px; border-bottom: 1px solid currentColor; font-size: 13px; font-weight: 800; }
-@keyframes service-help-enter { from { opacity: 0; transform: translate(18px, -50%); } to { opacity: 1; transform: translate(0, -50%); } }
+/* Centered service help card */
+.services-contact-card { display: flex; width: min(100%, 760px); align-items: center; justify-content: center; gap: 22px; margin: 28px auto 0; padding: 22px 28px; border: 1px solid rgb(32 45 40 / 10%); background: #eaf5b9; }
+.services-contact-card > svg { flex: 0 0 auto; }
+.services-contact-card__copy { text-align: left; }
+.services-contact-card__copy h3 { margin: 0 0 5px; font-size: 17px; font-weight: 800; letter-spacing: -.04em; }
+.services-contact-card__copy p { margin: 0; color: rgb(32 45 40 / 68%); font-size: 13px; line-height: 1.6; }
+.services-contact-card > a { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 9px; margin-left: 8px; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 12px; font-weight: 800; transition: gap .2s ease; }
+.services-contact-card > a:hover { gap: 14px; }
 @media (max-width: 620px) {
-  .service-help-trigger { position: fixed; top: auto; right: 14px; bottom: 18px; padding: 14px 16px; border-radius: 999px; writing-mode: horizontal-tb; }
-  .service-help-trigger:hover { transform: translateY(-3px); }
-  .service-help-trigger--hidden { transform: translateY(120%); }
-  .service-help-panel { position: fixed; top: auto; right: 12px; bottom: 12px; width: calc(100vw - 24px); padding: 24px; transform: none; animation-name: service-help-enter-mobile; }
-  .service-help-panel__icon { margin-top: 24px; }
-  .service-help-panel h3 { font-size: 24px; }
+  .services-contact-card { flex-wrap: wrap; justify-content: flex-start; gap: 12px 16px; margin-top: 18px; padding: 20px; }
+  .services-contact-card__copy { flex: 1 1 calc(100% - 44px); }
+  .services-contact-card > a { margin-left: 37px; }
 }
-@keyframes service-help-enter-mobile { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @media (prefers-reduced-motion: reduce) {
-  .service-help-trigger, .service-help-panel { animation: none; transition: none; }
+  .services-contact-card > a { transition: none; }
 }

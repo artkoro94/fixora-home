@@ -1,29 +1,43 @@
 # FIXORA HOME
 
-A modern portfolio landing page concept for a fictional home repair and maintenance service.
+Демонстрационный лендинг вымышленной компании, которая оказывает бытовые и технические услуги для дома.
 
-## Stack
+Проект создаётся для портфолио и ориентирован на русскоязычную аудиторию.
 
-- React 19 + TypeScript 6
+## Технологии
+
+- React 19 и TypeScript 6
 - Vite 8
 - Tailwind CSS 4
-- Lucide React
-- React Hook Form + Zod
-- Motion for React
+- Lucide React — иконки
+- React Hook Form и Zod — работа с формами и проверка данных
+- Motion — анимации интерфейса
 
-## Requirements
+## Требования
 
-- Node.js 22.12.0 or newer
-- npm 10 or newer
+- Node.js версии 22.12.0 или новее
+- npm версии 10 или новее
 
-## Getting started
+## Как запустить проект
 
-```bash
-npm install
-npm run dev
-```
+1. Скачайте архив проекта из GitHub и распакуйте его.
+2. Откройте распакованную папку в Visual Studio Code.
+3. Откройте терминал: **Терминал → Создать терминал**.
+4. Установите зависимости:
 
-## Quality checks
+   ```bash
+   npm install
+   ```
+
+5. Запустите проект:
+
+   ```bash
+   npm run dev
+   ```
+
+6. Откройте в браузере адрес, который появится в терминале (обычно http://localhost:5173).
+
+## Проверка перед отправкой изменений
 
 ```bash
 npm run typecheck
@@ -32,13 +46,15 @@ npm run format:check
 npm run build
 ```
 
-## Project notes
+## Важные особенности
 
-This is a demonstration project. Forms and chat interactions will be simulated locally; no personal data is submitted to a server.
+- Это демонстрационный проект: форма заявки и чат будут работать без сервера.
+- Данные пользователей никуда не отправляются.
+- Все тексты интерфейса и контент сайта предназначены для русскоязычной аудитории.
 
-## Brand direction
+## Фирменный стиль
 
-- Forest: `#202D28`
-- Cream: `#F5F3EC`
-- Lime: `#D7F36A`
-- Typography: Manrope
+- Тёмно-зелёный: `#202D28`
+- Молочный: `#F5F3EC`
+- Лаймовый акцент: `#D7F36A`
+- Основной шрифт: Manrope

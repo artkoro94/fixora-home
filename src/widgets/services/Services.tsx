@@ -1,4 +1,5 @@
-import { ArrowUpRight, Droplets, Hammer, Paintbrush, PlugZap, Sofa, Wrench, type LucideIcon } from 'lucide-react'
+import { useState } from 'react'
+import { ArrowUpRight, Droplets, MessageCircleQuestion, Paintbrush, PlugZap, Sofa, Wrench, X, type LucideIcon } from 'lucide-react'
 
 type Service = {
   number: string
@@ -38,6 +39,8 @@ function ServiceCard({ service }: { service: Service }) {
 }
 
 function Services() {
+  const [isHelpOpen, setIsHelpOpen] = useState(false)
+
   return (
     <section className="services-section" id="services" aria-labelledby="services-title">
       <div className="services-section__inner">
@@ -53,14 +56,35 @@ function Services() {
         </div>
         <div className="services-grid">
           {services.map((service) => <ServiceCard service={service} key={service.number} />)}
-          <div className="services-aside">
-            <div className="services-aside__mark"><Hammer size={22} strokeWidth={1.6} /></div>
-            <p>Не нашли нужную услугу?</p>
-            <span>Расскажите о задаче — подскажем, чем можем помочь.</span>
-            <a href="#contacts">Задать вопрос <ArrowUpRight size={17} /></a>
-          </div>
         </div>
         <div className="services-footnote"><span>FIXORA HOME / НАПРАВЛЕНИЯ РАБОТ</span><span>01 — 05</span></div>
+      </div>
+      <button
+        className={`service-help-trigger${isHelpOpen ? ' service-help-trigger--hidden' : ''}`}
+        type="button"
+        aria-expanded={isHelpOpen}
+        aria-controls="service-help-panel"
+        onClick={() => setIsHelpOpen(true)}
+      >
+        <MessageCircleQuestion size={18} aria-hidden="true" />
+        <span>Не нашли услугу?</span>
+      </button>
+      {isHelpOpen && (
+        <aside className="service-help-panel" id="service-help-panel" aria-labelledby="service-help-title">
+          <div className="service-help-panel__top">
+            <span className="service-help-panel__eyebrow">НУЖНА ПОМОЩЬ?</span>
+            <button className="service-help-panel__close" type="button" aria-label="Закрыть" onClick={() => setIsHelpOpen(false)}>
+              <X size={20} />
+            </button>
+          </div>
+          <div className="service-help-panel__icon"><MessageCircleQuestion size={25} strokeWidth={1.6} /></div>
+          <h3 id="service-help-title">Не нашли нужную услугу?</h3>
+          <p>Расскажите, что нужно сделать. Подскажем, сможем ли помочь, и сориентируем по дальнейшим шагам.</p>
+          <a href="#contacts" onClick={() => setIsHelpOpen(false)}>
+            Рассказать о задаче <ArrowUpRight size={18} />
+          </a>
+        </aside>
+      )}
       </div>
     </section>
   )

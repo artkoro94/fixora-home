@@ -3,6 +3,7 @@ import Hero from '../widgets/hero/Hero'
 import Services from '../widgets/services/Services'
 import Advantages from '../widgets/advantages/Advantages'
 import Process from '../widgets/process/Process'
+import Footer from '../widgets/footer/Footer'
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <Services />
         <Advantages />
         <Process />
-        <div id="contacts" />
+
       </main>
+      <Footer />
     </>
   )
 }

@@ -54,7 +54,6 @@ function Hero() {
 
         <div className="hero-visual__topline">
           <span>ЗАБОТА О ПРОСТРАНСТВЕ</span>
-          <span>01 / 04</span>
         </div>
 
         <div className="hero-note">

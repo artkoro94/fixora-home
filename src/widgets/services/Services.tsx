@@ -85,7 +85,6 @@ function Services() {
           </a>
         </aside>
       )}
-      </div>
     </section>
   )
 }

@@ -13,7 +13,7 @@ function App() {
           </span>
         </a>
         <span className="rounded-full border border-forest/15 px-4 py-2 text-xs font-semibold">
-          PROJECT FOUNDATION
+          ОСНОВА ПРОЕКТА
         </span>
       </div>
 
@@ -33,7 +33,7 @@ function App() {
         </p>
         <div className="mt-9">
           <span className="inline-flex rounded-full bg-lime px-6 py-4 text-sm font-bold">
-            Скоро здесь будет FIXORA HOME
+            Скоро здесь появится FIXORA HOME
           </span>
         </div>
       </section>

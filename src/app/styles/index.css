@@ -176,7 +176,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 
 /* Centered service help card */
-.services-contact-card { display: flex; width: min(100%, 760px); align-items: center; justify-content: center; gap: 22px; margin: 28px auto 0; padding: 22px 28px; border: 1px solid rgb(32 45 40 / 10%); background: #eaf5b9; }
+.services-contact-card { display: flex; width: min(100%, 760px); align-items: center; justify-content: center; gap: 22px; margin: 28px auto 0; padding: 22px 28px; border: 1px solid rgb(32 45 40 / 10%); background: #d7f36a; }
 .services-contact-card > svg { flex: 0 0 auto; }
 .services-contact-card__copy { text-align: left; }
 .services-contact-card__copy h3 { margin: 0 0 5px; font-size: 17px; font-weight: 800; letter-spacing: -.04em; }

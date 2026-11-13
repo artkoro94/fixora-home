@@ -29,7 +29,7 @@ function Footer() {
         </div>
 
         <div className="site-footer__bottom">
-          <a className="brand site-footer__brand" href="#home" aria-label="FIXORA — на главную">
+          <a className="brand site-footer__brand" href="#top" aria-label="FIXORA — на главную">
             <span className="brand__name">FIXORA<span>.</span></span>
             <span className="brand__caption">HOME SERVICE</span>
           </a>
@@ -38,7 +38,8 @@ function Footer() {
               <a href={item.href} key={item.href}>{item.label}</a>
             ))}
           </nav>
-          <span className="site-footer__copyright">© {new Date().getFullYear()} FIXORA HOME</span>        </div>
+          <span className="site-footer__copyright">© {new Date().getFullYear()} FIXORA HOME</span>
+        </div>
       </div>
     </footer>
   )

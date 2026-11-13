@@ -18,10 +18,7 @@
 .site-footer__nav { display: flex; flex-wrap: wrap; gap: 24px; }
 .site-footer__nav a, .site-footer__copyright { color: rgb(245 243 236 / 58%); font-size: 11px; }
 .site-footer__nav a { transition: color .2s ease; }
-.site-footer__nav a:hover { color: #d7f36a; }
-.site-footer__top { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 1px solid rgb(245 243 236 / 28%); border-radius: 50%; transition: color .2s ease, border-color .2s ease; }
-.site-footer__top:hover { border-color: #d7f36a; color: #d7f36a; }
-@media (max-width: 900px) {
+.site-footer__nav a:hover { color: #d7f36a; }@media (max-width: 900px) {
   .site-footer { padding: 76px 5% 24px; }
   .site-footer__contact { align-items: flex-start; flex-direction: column; gap: 34px; padding-bottom: 54px; }
   .site-footer__phone { width: min(100%, 420px); }

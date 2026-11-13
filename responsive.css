@@ -1,0 +1,94 @@
+/* Shared responsive alignment */
+.hero__title,.services-heading h2,.advantages-heading h2,.process-heading h2,.contact-heading h2,.site-footer__contact h2{text-wrap:balance}
+.hero__description,.services-heading__description,.advantages-heading__description,.contact-heading__description,.site-footer__description{text-wrap:pretty}
+.site-header,#top{scroll-margin-top:0}
+
+@media(max-width:900px){
+  .services-heading,.process-heading,.contact-heading,.site-footer__contact{align-items:center;text-align:center}
+  .services-heading .eyebrow,.process-heading>div:first-child .eyebrow,.contact-heading .eyebrow,.site-footer__contact .eyebrow{justify-content:center}
+  .services-heading__description,.process-heading__aside,.contact-heading__description,.site-footer__description{margin-inline:auto;text-align:center}
+  .service-card{align-items:center;justify-content:flex-start;text-align:center}
+  .service-card__top{justify-content:center}
+  .service-card__content{width:100%;min-width:0;flex:1 1 auto;margin-top:32px}
+  .service-card__content p{margin-inline:auto}
+  .service-card__content ul{align-items:center;justify-content:center}
+  .service-card__content li{max-width:100%;overflow-wrap:anywhere}
+  .service-card__link{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;margin:28px auto 0}
+  .services-contact-card{justify-content:center;text-align:center}
+  .services-contact-card__copy{text-align:center}
+  .services-contact-card>a{margin-left:0}
+  .process-heading__aside{justify-items:center}
+  .process-steps{text-align:center}
+  .process-step{align-items:center}
+  .process-step__top{justify-content:center}
+  .process-step__content{width:100%}
+  .process-step h3,.process-step p{margin-inline:auto}
+  .contact-section__inner{justify-items:center}
+  .contact-heading{width:100%}
+  .contact-details{width:min(100%,560px);margin:32px auto 0}
+  .contact-form{width:min(100%,620px)}
+  .site-footer__contact{gap:30px}
+  .site-footer__contact-copy{width:min(100%,560px)}
+  .site-footer__phone{width:min(100%,440px);margin-inline:auto;text-align:left}
+  .site-footer__bottom{display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:16px;width:100%;text-align:initial}
+  .site-footer__nav{display:none}
+  .site-footer__brand{min-width:0;justify-self:start;white-space:nowrap}
+  .site-footer__copyright{justify-self:end;text-align:right;white-space:nowrap}
+  .contact-details>a,.contact-details>div{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 16px;min-height:82px;padding:18px 14px}
+  .contact-details__icon{display:none}
+  .contact-details>a>span:nth-child(2){grid-column:1;text-align:left}
+  .contact-details>div>span:nth-child(2){grid-column:1/-1}
+  .contact-details>a>svg:last-child{grid-column:2;grid-row:1;width:22px;height:22px;padding:3px;border:1px solid rgb(32 45 40 / 28%);border-radius:50%;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+  .contact-details>a{background:rgb(255 255 255 / 28%)}
+  .contact-details>a::after{grid-column:1/-1;color:rgb(32 45 40 / 52%);content:'Нажмите, чтобы позвонить';font-size:10px;font-weight:700;letter-spacing:.04em}
+  .contact-details>a:hover,.contact-details>a:focus-visible{background:rgb(215 243 106 / 22%)}
+  .contact-details>a:hover>svg:last-child,.contact-details>a:focus-visible>svg:last-child{transform:translate(2px,-2px);border-color:var(--color-olive);background:var(--color-lime)}
+}
+
+@media(min-width:621px) and (max-width:900px){
+  .service-card__content{margin-top:32px}
+  .site-footer{padding:68px 6% 28px}
+  .site-footer__contact{gap:30px;padding-bottom:48px}
+  .site-footer__phone{display:flex;align-items:center;min-width:0;gap:14px}
+  .site-footer__phone>span:nth-child(2){min-width:0;flex:1 1 auto}
+  .site-footer__phone>svg{display:block;flex:0 0 20px;margin-left:auto}
+  .services-grid>.service-card--05{width:calc((100% - 14px)/2);min-width:0;grid-column:1/-1;justify-self:center}
+}
+
+@media(max-width:760px){
+  .hero__content{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .hero__content>.eyebrow{justify-content:center}
+  .hero__description{margin-inline:auto}
+  .hero__actions{width:100%;align-items:center;justify-content:center}
+  .hero-proof{width:100%;justify-content:center;text-align:left}
+  .services-contact-card{flex-direction:column}
+  .services-contact-card__copy{flex:initial}
+  .services-contact-card>a{margin:4px auto 0}
+}
+
+@media(max-width:620px){
+  .hero__title{max-width:12ch;margin-inline:auto;font-size:clamp(42px,10vw,58px)}
+  .hero__description{max-width:34ch}
+  .services-heading__description,.advantages-heading__description,.process-heading__aside p{max-width:38ch}
+  .contact-heading__description,.contact-form__intro p{max-width:34ch}
+  .service-card__content{margin-top:30px}
+  .site-footer{padding:64px 22px 24px}
+  .site-footer__contact{gap:28px;padding-bottom:42px}
+  .site-footer__contact-copy{width:100%}
+  .site-footer__contact h2{font-size:clamp(40px,10vw,52px)}
+  .site-footer__description{max-width:34ch}
+  .site-footer__phone{width:100%;min-width:0;max-width:420px}
+  .site-footer__bottom{gap:22px 12px;padding-top:22px}
+  .site-footer__brand{grid-column:auto;grid-row:auto}
+  .site-footer__copyright{font-size:10px}
+}
+
+@media(max-width:380px){
+  .site-footer__bottom{gap:8px}
+  .site-footer__brand .brand__caption{font-size:8px;letter-spacing:1px}
+  .site-footer__copyright{font-size:9px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .contact-details>a>svg:last-child{transition:none}
+}

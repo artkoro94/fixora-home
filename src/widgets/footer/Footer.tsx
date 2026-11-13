@@ -8,7 +8,7 @@ const footerNavigation = [
 
 function Footer() {
   return (
-    <footer className="site-footer" id="contacts">
+    <footer className="site-footer">
       <div className="site-footer__inner">
         <div className="site-footer__contact">
           <div className="site-footer__contact-copy">

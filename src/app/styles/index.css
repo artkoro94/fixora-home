@@ -515,3 +515,51 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .site-footer__brand { grid-column: 1; grid-row: 2; justify-self: start; }
   .site-footer__copyright { grid-column: 2; grid-row: 2; justify-self: end; text-align: right; }
 }
+
+/* Contact details: clearer tap target on tablet and mobile */
+@media (max-width: 900px) {
+  .contact-details > a,
+  .contact-details > div {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px 16px;
+    min-height: 82px;
+    padding: 18px 14px;
+  }
+  .contact-details__icon { display: none; }
+  .contact-details > a > span:nth-child(2),
+  .contact-details > div > span:nth-child(2) {
+    grid-column: 1;
+    text-align: left;
+  }
+  .contact-details > a > svg:last-child {
+    grid-column: 2;
+    grid-row: 1;
+    width: 22px;
+    height: 22px;
+    padding: 3px;
+    border: 1px solid rgb(32 45 40 / 28%);
+    border-radius: 50%;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  }
+  .contact-details > a { background: rgb(255 255 255 / 28%); }
+  .contact-details > a::after {
+    grid-column: 1 / -1;
+    color: rgb(32 45 40 / 52%);
+    content: 'Нажмите, чтобы позвонить';
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+  .contact-details > a:hover,
+  .contact-details > a:focus-visible { background: rgb(215 243 106 / 22%); }
+  .contact-details > a:hover > svg:last-child,
+  .contact-details > a:focus-visible > svg:last-child {
+    transform: translate(2px, -2px);
+    border-color: #789c35;
+    background: #d7f36a;
+  }
+  .contact-details > div > span:nth-child(2) { grid-column: 1 / -1; }
+}

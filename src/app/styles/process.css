@@ -1,8 +1,7 @@
 /* Process */
 .process-section { padding: 112px 5.5% 38px; background: #f5f3ec; color: #202d28; }
-.process-section__inner { max-width: 1440px; margin: 0 auto; }
-.process-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 58px; }
-.process-heading h2 { margin: 22px 0 0; font-size: clamp(42px, 5vw, 68px); font-weight: 800; line-height: 1.02; letter-spacing: -.075em; }
+.process-heading { margin-bottom: 58px; }
+.process-heading h2 { margin: 22px 0 0; }
 .process-heading h2 span { color: rgb(32 45 40 / 38%); }
 .process-heading__aside { display: grid; justify-items: start; gap: 20px; max-width: 390px; margin-bottom: 6px; }
 .process-heading__aside p { margin: 0; color: rgb(32 45 40 / 66%); font-size: 14px; line-height: 1.85; }

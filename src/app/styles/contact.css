@@ -1,7 +1,7 @@
 /* Contact */
 .contact-section { padding: 112px 5.5%; background: #e9e8df; color: #202d28; }
 .contact-section__inner { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: start; gap: clamp(42px, 7vw, 104px); max-width: 1440px; margin: 0 auto; }
-.contact-heading h2 { margin: 22px 0 18px; font-size: clamp(42px, 5vw, 68px); font-weight: 800; line-height: 1.02; letter-spacing: -.075em; }
+.contact-heading h2 { margin: 22px 0 18px; }
 .contact-heading h2 span { color: rgb(32 45 40 / 40%); }
 .contact-heading__description { max-width: 420px; margin: 0; color: rgb(32 45 40 / 66%); font-size: 14px; line-height: 1.85; }
 .contact-details { display: grid; gap: 0; max-width: 440px; margin-top: 48px; border-top: 1px solid rgb(32 45 40 / 16%); }

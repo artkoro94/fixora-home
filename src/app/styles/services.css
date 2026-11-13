@@ -1,0 +1,82 @@
+/* Услуги */
+.services-section { padding: 112px 5.5% 38px; background: #f5f3ec; }
+.services-section__inner { max-width: 1440px; margin: 0 auto; }
+.services-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; margin-bottom: 54px; }
+.services-heading h2 { margin: 22px 0 0; font-size: clamp(42px, 5vw, 68px); font-weight: 800; line-height: 1.02; letter-spacing: -.075em; }
+.services-heading h2 span { color: rgb(32 45 40 / 38%); }
+.services-heading__description { max-width: 390px; margin: 0 0 6px; color: rgb(32 45 40 / 66%); font-size: 14px; line-height: 1.85; }
+.services-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; }
+.service-card { position: relative; display: flex; min-height: 370px; flex-direction: column; justify-content: space-between; grid-column: span 4; overflow: hidden; padding: 30px; border: 1px solid rgb(32 45 40 / 9%); background: #fff; transition: transform .25s ease, border-color .25s ease; }
+.service-card:hover { transform: translateY(-4px); border-color: rgb(32 45 40 / 24%); }
+.service-card--01 { min-height: 410px; grid-column: span 7; background: #202d28; color: #f5f3ec; }
+.service-card--02 { min-height: 410px; grid-column: span 5; }
+.service-card__top { display: flex; align-items: flex-start; justify-content: space-between; }
+.service-card__icon { display: grid; width: 48px; height: 48px; place-items: center; border: 1px solid currentColor; border-radius: 50%; opacity: .82; }
+.service-card--featured .service-card__icon { border-color: rgb(215 243 106 / 35%); color: #d7f36a; }
+.service-card__content h3 { margin: 0 0 12px; font-size: clamp(24px, 2.4vw, 34px); font-weight: 800; letter-spacing: -.055em; }
+.service-card__content p { max-width: 500px; margin: 0; color: currentColor; font-size: 15px; line-height: 1.75; opacity: .68; }
+.service-card__content ul { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 0; padding: 0; list-style: none; }
+.service-card__content li { padding: 9px 12px; border: 1px solid currentColor; border-radius: 2px; color: currentColor; font-size: 12px; line-height: 1.35; opacity: .68; }
+.service-card__link { display: inline-flex; align-items: center; justify-content: space-between; gap: 14px; width: fit-content; min-width: 190px; padding-bottom: 7px; border-bottom: 1px solid currentColor; font-size: 13px; font-weight: 800; transition: gap .2s ease; }
+.service-card__link:hover { gap: 22px; }
+.service-card--featured .service-card__link { color: #d7f36a; }
+.services-aside { display: flex; min-height: 260px; flex-direction: column; align-items: flex-start; justify-content: center; grid-column: span 4; padding: 28px; background: #d7f36a; }
+.services-aside__mark { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgb(32 45 40 / 25%); border-radius: 50%; }
+.services-aside p { margin: 20px 0 7px; font-size: 18px; font-weight: 800; letter-spacing: -.04em; }
+.services-aside > span { max-width: 280px; color: rgb(32 45 40 / 70%); font-size: 14px; line-height: 1.7; }
+.services-aside a { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; font-size: 13px; font-weight: 800; }
+@media (min-width: 621px) and (max-width: 900px) {
+  .services-grid > .service-card--05 {
+    width: calc((100% - 14px) / 2);
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-section { padding: 88px 5% 30px; }
+  .services-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 36px; }
+  .services-heading__description { max-width: 560px; }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services-grid > .service-card { min-width: 0; grid-column: span 1; min-height: 390px; padding: 24px; }
+  .service-card__link { min-width: 0; max-width: 100%; }
+}
+@media (max-width: 900px) {
+  .service-card { gap: 26px; }
+  .service-card__link { margin-top: 8px; }
+}
+@media (max-width: 620px) {
+  .services-section { padding: 76px 22px 28px; }
+  .services-heading h2 { font-size: clamp(40px, 10vw, 54px); }
+  .services-grid { display: grid; width: 100%; min-width: 0; grid-template-columns: minmax(0, 1fr); grid-auto-flow: row; gap: 10px; }
+  .services-grid > .service-card,
+  .services-grid > .service-card--01,
+  .services-grid > .service-card--02 { width: 100%; min-width: 0; max-width: 100%; min-height: 310px; grid-column: 1 / -1; justify-self: stretch; padding: 22px; }
+  .services-grid > .service-card--01 { min-height: 350px; }
+  .service-card__link { justify-content: center; margin: 28px auto 0; }
+  .service-card__content h3 { font-size: 28px; }
+  .service-card__content p { font-size: 14px; }
+  .service-card__content li { font-size: 11px; }
+  .services-aside { min-height: 240px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-card, .service-card__link { transition: none; }
+}
+
+
+/* Centered service help card */
+.services-contact-card { display: flex; width: min(100%, 760px); align-items: center; justify-content: center; gap: 22px; margin: 28px auto 0; padding: 22px 28px; border: 1px solid rgb(32 45 40 / 10%); background: #d7f36a; }
+.services-contact-card > svg { flex: 0 0 auto; }
+.services-contact-card__copy { text-align: left; }
+.services-contact-card__copy h3 { margin: 0 0 5px; font-size: 17px; font-weight: 800; letter-spacing: -.04em; }
+.services-contact-card__copy p { margin: 0; color: rgb(32 45 40 / 68%); font-size: 13px; line-height: 1.6; }
+.services-contact-card > a { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 9px; margin-left: 8px; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 12px; font-weight: 800; transition: gap .2s ease; }
+.services-contact-card > a:hover { gap: 14px; }
+@media (max-width: 620px) {
+  .services-contact-card { flex-wrap: wrap; justify-content: flex-start; gap: 12px 16px; margin-top: 18px; padding: 20px; }
+  .services-contact-card__copy { flex: 1 1 calc(100% - 44px); }
+  .services-contact-card > a { margin-left: 37px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .services-contact-card > a { transition: none; }
+}

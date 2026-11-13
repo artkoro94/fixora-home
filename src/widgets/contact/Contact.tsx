@@ -100,7 +100,7 @@ function Contact() {
           </label>
           <label className="contact-field">
             <span>Номер телефона</span>
-            <input ref={phoneInputRef} name="phone" type="tel" inputMode="numeric" placeholder="+7 (___) ___-__-__" autoComplete="tel" value={phone} onChange={handlePhoneChange} maxLength={18} required />
+            <input ref={phoneInputRef} name="phone" type="tel" inputMode="numeric" placeholder="+7 (___) ___-__-__" autoComplete="tel" value={phone} onChange={handlePhoneChange} maxLength={18} pattern="\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}" title="Введите полный номер: 10 цифр после +7" required />
           </label>
           <label className="contact-field">
             <span>Направление работ</span>

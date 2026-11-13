@@ -12,7 +12,7 @@ const services = [
 
 function formatRussianPhone(nationalDigits: string) {
   const digits = nationalDigits.slice(0, 10)
-  if (!digits) return ''
+  if (!digits) return '+7'
 
   let formatted = '+7'
   if (digits.length > 0) formatted += ' (' + digits.slice(0, 3)
@@ -62,7 +62,7 @@ function Contact() {
       0,
       rawDigitsBeforeCaret - (rawDigits.startsWith('7') || rawDigits.startsWith('8') ? 1 : 0),
     )
-    const formatted = formatRussianPhone(nationalDigits)
+    const formatted = rawDigits.length ? formatRussianPhone(nationalDigits) : ''
 
     pendingCaret.current = getPhoneCaretPosition(
       formatted,

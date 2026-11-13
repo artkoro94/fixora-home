@@ -1,6 +1,8 @@
 import { ArrowDown, ArrowUpRight, Check } from 'lucide-react'
 
 function Hero() {
+  const imageBase = `${import.meta.env.BASE_URL}images/`
+
   return (
     <section className="hero" id="home" aria-labelledby="hero-title">
       <div className="hero__content">
@@ -42,7 +44,11 @@ function Hero() {
       <div className="hero-visual">
         <img
           className="hero-visual__image"
-          src={`${import.meta.env.BASE_URL}images/hero-living-room.webp`}
+          src={`${imageBase}hero-living-room-hq.webp`}
+          srcSet={`${imageBase}hero-living-room-hq.webp 1x, ${imageBase}hero-living-room-2x.webp 2x`}
+          sizes="100vw"
+          width="1536"
+          height="1024"
           alt="Светлая гостиная с кремовым диваном, деревянной мебелью и мягким дневным светом"
           fetchPriority="high"
           decoding="async"
@@ -65,7 +71,6 @@ function Hero() {
           <span>FIXORA HOME</span>
         </div>
       </div>
-
     </section>
   )
 }

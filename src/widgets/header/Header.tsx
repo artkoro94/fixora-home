@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, type KeyboardEvent } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 const navigation = [
@@ -14,7 +14,7 @@ function Header() {
 
   const closeMenu = () => setIsMenuOpen(false)
 
-  const handleHeaderKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+  const handleHeaderKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (event.key === 'Escape' && isMenuOpen) {
       closeMenu()
       menuToggleRef.current?.focus()

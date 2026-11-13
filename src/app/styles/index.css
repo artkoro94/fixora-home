@@ -623,50 +623,35 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 
-/* Keep the desktop footer order while wrapping it into two fluid rows */
+/* Keep footer compact on tablet and mobile: header already contains navigation */
 @media (max-width: 900px) {
+  .site-footer__nav { display: none; }
+
   .site-footer__bottom {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      "navigation navigation"
-      "brand copyright";
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-items: stretch;
-    gap: 26px clamp(12px, 3vw, 24px);
+    justify-content: space-between;
+    gap: 16px;
     width: 100%;
     text-align: initial;
   }
 
-  .site-footer__nav {
-    grid-area: navigation;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 12px clamp(18px, 3vw, 28px);
-    min-width: 0;
-  }
-
   .site-footer__brand {
-    grid-area: brand;
     justify-self: start;
     min-width: 0;
     white-space: nowrap;
   }
 
   .site-footer__copyright {
-    grid-area: copyright;
     justify-self: end;
-    align-self: center;
     text-align: right;
     white-space: nowrap;
   }
 }
 
 @media (max-width: 380px) {
-  .site-footer__bottom { column-gap: 8px; }
+  .site-footer__bottom { gap: 8px; }
   .site-footer__brand .brand__caption { font-size: 8px; letter-spacing: 1px; }
   .site-footer__copyright { font-size: 9px; }
 }

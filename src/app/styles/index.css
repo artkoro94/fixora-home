@@ -507,3 +507,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .site-footer__copyright { grid-column: 1 / -1; text-align: center; }
   .site-footer__top { grid-column: 2; grid-row: 1; margin: 0; }
 }
+
+/* Tablet footer: keep brand and copyright on the same bottom row */
+@media (min-width: 621px) and (max-width: 900px) {
+  .site-footer__bottom { display: grid; grid-template-columns: 1fr auto; justify-items: stretch; align-items: center; gap: 22px 24px; }
+  .site-footer__nav { grid-column: 1 / -1; grid-row: 1; justify-content: center; }
+  .site-footer__brand { grid-column: 1; grid-row: 2; justify-self: start; }
+  .site-footer__copyright { grid-column: 2; grid-row: 2; justify-self: end; text-align: right; }
+}

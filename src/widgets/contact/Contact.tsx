@@ -89,7 +89,7 @@ function Contact() {
     onChange(formatted)
   }
 
-  const onSubmit = (_values: ContactFormValues) => {
+  const onSubmit = () => {
     setNotice('Поля заполнены верно. Отправка заявок пока не подключена — данные никуда не передаются.')
   }
 

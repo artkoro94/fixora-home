@@ -1,4 +1,4 @@
-import { ArrowUpRight, ArrowUp, Phone } from 'lucide-react'
+import { ArrowUpRight, Phone } from 'lucide-react'
 
 const footerNavigation = [
   { label: 'Услуги', href: '#services' },
@@ -38,11 +38,7 @@ function Footer() {
               <a href={item.href} key={item.href}>{item.label}</a>
             ))}
           </nav>
-          <span className="site-footer__copyright">© {new Date().getFullYear()} FIXORA HOME</span>
-          <a className="site-footer__top" href="#home" aria-label="Вернуться наверх">
-            <ArrowUp size={18} />
-          </a>
-        </div>
+          <span className="site-footer__copyright">© {new Date().getFullYear()} FIXORA HOME</span>        </div>
       </div>
     </footer>
   )

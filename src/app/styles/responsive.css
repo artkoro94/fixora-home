@@ -62,8 +62,8 @@
 
 @media(min-width:621px) and (max-width:900px){
   .contact-details>a{
-    width:min(100%,440px);
-    justify-self:center;
+    width:100%;
+    justify-self:stretch;
     grid-template-columns:1fr auto auto 1fr;
   }
   .contact-details>a>span:nth-child(2){

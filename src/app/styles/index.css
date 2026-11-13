@@ -655,3 +655,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .site-footer__brand .brand__caption { font-size: 8px; letter-spacing: 1px; }
   .site-footer__copyright { font-size: 9px; }
 }
+
+
+/* Keep the phone action arrow visibly attached to the phone link on tablets */
+@media (min-width: 621px) and (max-width: 900px) {
+  .site-footer__phone {
+    display: flex;
+    align-items: center;
+    width: min(100%, 440px);
+    min-width: 0;
+    gap: 14px;
+    margin-inline: auto;
+  }
+
+  .site-footer__phone > span:nth-child(2) {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .site-footer__phone > svg {
+    display: block;
+    flex: 0 0 20px;
+    margin-left: auto;
+  }
+}

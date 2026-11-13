@@ -621,3 +621,52 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .site-footer__copyright { grid-column: 2; grid-row: 1; justify-self: end; font-size: 10px; }
   .site-footer__nav { grid-column: 1 / -1; grid-row: 2; flex-wrap: wrap; justify-content: center; gap: 12px 22px; }
 }
+
+
+/* Keep the desktop footer order while wrapping it into two fluid rows */
+@media (max-width: 900px) {
+  .site-footer__bottom {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "navigation navigation"
+      "brand copyright";
+    align-items: center;
+    justify-items: stretch;
+    gap: 26px clamp(12px, 3vw, 24px);
+    width: 100%;
+    text-align: initial;
+  }
+
+  .site-footer__nav {
+    grid-area: navigation;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px clamp(18px, 3vw, 28px);
+    min-width: 0;
+  }
+
+  .site-footer__brand {
+    grid-area: brand;
+    justify-self: start;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .site-footer__copyright {
+    grid-area: copyright;
+    justify-self: end;
+    align-self: center;
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-footer__bottom { column-gap: 8px; }
+  .site-footer__brand .brand__caption { font-size: 8px; letter-spacing: 1px; }
+  .site-footer__copyright { font-size: 9px; }
+}

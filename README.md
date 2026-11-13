@@ -1,6 +1,6 @@
 # FIXORA HOME
 
-**Демо:** https://artkoro94.github.io/fixora-home/
+https://artkoro94.github.io/fixora-home/
 
 Демонстрационный лендинг вымышленной компании, которая оказывает бытовые и технические услуги для дома.
 

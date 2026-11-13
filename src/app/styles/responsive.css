@@ -46,6 +46,13 @@
 }
 
 @media(min-width:621px) and (max-width:900px){
+  .contact-details>a{
+    width:min(100%,440px);
+    justify-self:center;
+  }
+}
+
+@media(min-width:621px) and (max-width:900px){
   .site-footer{padding:68px 6% 28px}
   .site-footer__contact{gap:30px;padding-bottom:48px}
   .site-footer__phone{display:flex;align-items:center;min-width:0;gap:14px}

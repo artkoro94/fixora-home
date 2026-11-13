@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState, type KeyboardEvent } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 
 const navigation = [
@@ -10,11 +10,19 @@ const navigation = [
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuToggleRef = useRef<HTMLButtonElement>(null)
 
   const closeMenu = () => setIsMenuOpen(false)
 
+  const handleHeaderKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Escape' && isMenuOpen) {
+      closeMenu()
+      menuToggleRef.current?.focus()
+    }
+  }
+
   return (
-    <header className="site-header">
+    <header className="site-header" onKeyDown={handleHeaderKeyDown}>
       <div className="site-header__inner">
         <a className="brand" href="#home" aria-label="FIXORA HOME — на главную" onClick={closeMenu}>
           <span className="brand__name">FIXORA<span>.</span></span>
@@ -49,7 +57,7 @@ function Header() {
         </div>
       </div>
 
-      <div className={`mobile-nav ${isMenuOpen ? 'mobile-nav--open' : ''}`} id="mobile-navigation" aria-hidden={!isMenuOpen}>
+      <div className={`mobile-nav ${isMenuOpen ? 'mobile-nav--open' : ''}`} id="mobile-navigation" aria-hidden={!isMenuOpen} inert={!isMenuOpen}>
         <nav aria-label="Мобильная навигация">
           {navigation.map((item) => (
             <a href={item.href} key={item.href} onClick={closeMenu}>

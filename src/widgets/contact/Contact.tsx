@@ -10,32 +10,29 @@ const services = [
   'Другое',
 ]
 
-function formatRussianPhone(value: string) {
-  const inputDigits = value.replace(/\\D/g, '')
-  if (!inputDigits) return { formatted: '', digits: '' }
-
-  let digits = inputDigits
-  if (digits.startsWith('8')) digits = '7' + digits.slice(1)
-  else if (!digits.startsWith('7')) digits = '7' + digits
-  digits = digits.slice(0, 11)
+function formatRussianPhone(nationalDigits: string) {
+  const digits = nationalDigits.slice(0, 10)
+  if (!digits) return ''
 
   let formatted = '+7'
-  if (digits.length > 1) formatted += ' (' + digits.slice(1, 4)
-  if (digits.length >= 4) formatted += ')'
-  if (digits.length > 4) formatted += ' ' + digits.slice(4, 7)
-  if (digits.length > 7) formatted += '-' + digits.slice(7, 9)
-  if (digits.length > 9) formatted += '-' + digits.slice(9, 11)
-  return { formatted, digits }
+  if (digits.length > 0) formatted += ' (' + digits.slice(0, 3)
+  if (digits.length >= 3) formatted += ')'
+  if (digits.length > 3) formatted += ' ' + digits.slice(3, 6)
+  if (digits.length > 6) formatted += '-' + digits.slice(6, 8)
+  if (digits.length > 8) formatted += '-' + digits.slice(8, 10)
+  return formatted
 }
 
-function getCaretPosition(value: string, digitCount: number) {
-  if (digitCount === 0) return 0
+function getPhoneCaretPosition(formatted: string, nationalDigitCount: number) {
+  if (!formatted) return 0
+  if (nationalDigitCount === 0) return 2
+
   let seen = 0
-  for (let index = 0; index < value.length; index += 1) {
-    if (/\\d/.test(value[index])) seen += 1
-    if (seen === digitCount) return index + 1
+  for (let index = 2; index < formatted.length; index += 1) {
+    if (/\d/.test(formatted[index])) seen += 1
+    if (seen === nationalDigitCount) return index + 1
   }
-  return value.length
+  return formatted.length
 }
 
 function Contact() {
@@ -51,10 +48,26 @@ function Contact() {
   }, [phone])
 
   const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const input = event.currentTarget
-    const digitsBeforeCaret = input.value.slice(0, input.selectionStart ?? input.value.length).replace(/\\D/g, '').length
-    const { formatted, digits } = formatRussianPhone(input.value)
-    pendingCaret.current = getCaretPosition(formatted, Math.min(digitsBeforeCaret, digits.length))
+    const inputValue = event.currentTarget.value
+    const rawDigits = inputValue.replace(/\D/g, '')
+    const rawDigitsBeforeCaret = inputValue
+      .slice(0, event.currentTarget.selectionStart ?? inputValue.length)
+      .replace(/\D/g, '').length
+
+    // The leading 7 or 8 is the country/trunk prefix, not part of the national number.
+    const nationalDigits = rawDigits.startsWith('7') || rawDigits.startsWith('8')
+      ? rawDigits.slice(1)
+      : rawDigits
+    const nationalDigitsBeforeCaret = Math.max(
+      0,
+      rawDigitsBeforeCaret - (rawDigits.startsWith('7') || rawDigits.startsWith('8') ? 1 : 0),
+    )
+    const formatted = formatRussianPhone(nationalDigits)
+
+    pendingCaret.current = getPhoneCaretPosition(
+      formatted,
+      Math.min(nationalDigitsBeforeCaret, nationalDigits.length, 10),
+    )
     setPhone(formatted)
   }
 

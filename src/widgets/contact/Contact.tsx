@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useLayoutEffect, useRef, useState, type ChangeEvent, type FormEvent } from 'react'
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 
 const services = [
@@ -10,8 +10,53 @@ const services = [
   'Другое',
 ]
 
+function formatRussianPhone(value: string) {
+  const inputDigits = value.replace(/\\D/g, '')
+  if (!inputDigits) return { formatted: '', digits: '' }
+
+  let digits = inputDigits
+  if (digits.startsWith('8')) digits = '7' + digits.slice(1)
+  else if (!digits.startsWith('7')) digits = '7' + digits
+  digits = digits.slice(0, 11)
+
+  let formatted = '+7'
+  if (digits.length > 1) formatted += ' (' + digits.slice(1, 4)
+  if (digits.length >= 4) formatted += ')'
+  if (digits.length > 4) formatted += ' ' + digits.slice(4, 7)
+  if (digits.length > 7) formatted += '-' + digits.slice(7, 9)
+  if (digits.length > 9) formatted += '-' + digits.slice(9, 11)
+  return { formatted, digits }
+}
+
+function getCaretPosition(value: string, digitCount: number) {
+  if (digitCount === 0) return 0
+  let seen = 0
+  for (let index = 0; index < value.length; index += 1) {
+    if (/\\d/.test(value[index])) seen += 1
+    if (seen === digitCount) return index + 1
+  }
+  return value.length
+}
+
 function Contact() {
   const [notice, setNotice] = useState('')
+  const [phone, setPhone] = useState('')
+  const phoneInputRef = useRef<HTMLInputElement>(null)
+  const pendingCaret = useRef<number | null>(null)
+
+  useLayoutEffect(() => {
+    if (pendingCaret.current === null || !phoneInputRef.current) return
+    phoneInputRef.current.setSelectionRange(pendingCaret.current, pendingCaret.current)
+    pendingCaret.current = null
+  }, [phone])
+
+  const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const input = event.currentTarget
+    const digitsBeforeCaret = input.value.slice(0, input.selectionStart ?? input.value.length).replace(/\\D/g, '').length
+    const { formatted, digits } = formatRussianPhone(input.value)
+    pendingCaret.current = getCaretPosition(formatted, Math.min(digitsBeforeCaret, digits.length))
+    setPhone(formatted)
+  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -55,7 +100,7 @@ function Contact() {
           </label>
           <label className="contact-field">
             <span>Номер телефона</span>
-            <input name="phone" type="tel" placeholder="+7 (___) ___-__-__" autoComplete="tel" required />
+            <input ref={phoneInputRef} name="phone" type="tel" inputMode="numeric" placeholder="+7 (___) ___-__-__" autoComplete="tel" value={phone} onChange={handlePhoneChange} maxLength={18} required />
           </label>
           <label className="contact-field">
             <span>Направление работ</span>

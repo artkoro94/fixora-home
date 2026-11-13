@@ -42,13 +42,10 @@ function Hero() {
       <div className="hero-visual">
         <img
           className="hero-visual__image"
-          src="https://www.woodendot.com/cdn/shop/files/ibon_web_home_horizontal_tables3.jpg?v=1772356516&width=2100"
-          alt="Светлая современная гостиная с натуральными материалами и мягким дневным светом"
+          src={`${import.meta.env.BASE_URL}images/hero-living-room.webp`}
+          alt="Светлая гостиная с кремовым диваном, деревянной мебелью и мягким дневным светом"
           fetchPriority="high"
           decoding="async"
-          onError={(event) => {
-            event.currentTarget.style.display = 'none'
-          }}
         />
 
         <div className="hero-visual__topline">

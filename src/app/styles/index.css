@@ -687,3 +687,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
     margin-left: auto;
   }
 }
+
+
+/* Tablet: center the last service card at exactly one grid-column width */
+@media (min-width: 621px) and (max-width: 900px) {
+  .services-grid > .service-card--05 {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 14px) / 2);
+    min-width: 0;
+  }
+}

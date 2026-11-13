@@ -59,7 +59,7 @@ function Contact() {
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
-    mode: 'onBlur',
+    mode: 'onSubmit',
     reValidateMode: 'onChange',
     defaultValues: { name: '', phone: '', service: '', message: '' },
   })

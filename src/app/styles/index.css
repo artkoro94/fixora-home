@@ -378,39 +378,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 /* Contact form validation and select control */
 
-.contact-field__error {
-  display: flex;
-  align-items: flex-start;
-  gap: 9px;
-  margin-top: 1px;
-  padding: 9px 12px;
-  border-left: 2px solid #c77b68;
-  background: #f4e9e3;
-  color: #875044;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1.55;
-}
-.contact-field__error::before {
-  width: 6px;
-  height: 6px;
-  flex: 0 0 6px;
-  margin-top: 5px;
-  border-radius: 50%;
-  background: #c77b68;
-  content: '';
-}
+.contact-field__error { color: #b42318; font-size: 12px; line-height: 1.5; }
 .contact-field input[aria-invalid="true"],
 .contact-field select[aria-invalid="true"],
-.contact-field textarea[aria-invalid="true"] {
-  border-color: #c77b68;
-  background-color: #fbf5f1;
-}
+.contact-field textarea[aria-invalid="true"] { border-color: #b42318; background: rgb(180 35 24 / 3%); }
 .contact-field input[aria-invalid="true"]:focus,
 .contact-field select[aria-invalid="true"]:focus,
-.contact-field textarea[aria-invalid="true"]:focus {
-  border-color: #a96352;
-}
+.contact-field textarea[aria-invalid="true"]:focus { border-color: #b42318; }
 .contact-field select {
   appearance: none;
   padding-right: 48px;

@@ -5,4 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   base: '/fixora-home/',
   plugins: [react(), tailwindcss()],
+  server: {
+    open: true,
+  }
 })

@@ -118,7 +118,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-visual::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgb(20 31 25 / 0%) 55%, rgb(20 31 25 / 48%) 100%), linear-gradient(90deg, #f5f3ec 0%, rgb(245 243 236 / 97%) 30%, rgb(245 243 236 / 88%) 43%, rgb(245 243 236 / 48%) 59%, rgb(245 243 236 / 8%) 82%);
+  background: none;
   content: '';
   pointer-events: none;
 }
@@ -159,7 +159,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero__secondary-link { justify-content: center; }
   .hero-proof { justify-content: center; margin-top: 34px; }
   .button { min-height: 52px; padding: 0 19px; font-size: 12px; }
-  .hero-visual::after { background: linear-gradient(180deg, #f5f3ec 0%, rgb(245 243 236 / 98%) 38%, rgb(245 243 236 / 88%) 53%, rgb(245 243 236 / 28%) 76%, rgb(20 31 25 / 20%) 100%); }
+  .hero-visual::after { background: none; }
   .hero-visual__image { object-position: 62% center; }
   .hero-visual__topline, .hero-visual__caption { right: 18px; left: 18px; font-size: 8px; }
   .hero-note { right: 16px; bottom: 65px; }

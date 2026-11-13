@@ -69,10 +69,6 @@ function Hero() {
         </div>
       </div>
 
-      <div className="hero-bottomline">
-        <span>БЫТОВЫЕ И ТЕХНИЧЕСКИЕ УСЛУГИ</span>
-        <span>ДЛЯ ДОМА И КАЖДОГО ДНЯ</span>
-      </div>
     </section>
   )
 }

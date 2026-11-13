@@ -1,4 +1,7 @@
 import { useLayoutEffect, useRef, useState, type ChangeEvent, type FormEvent } from 'react'
+import { Controller, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 
 const services = [
@@ -9,6 +12,15 @@ const services = [
   'Мастер на час',
   'Другое',
 ]
+
+const contactSchema = z.object({
+  name: z.string().trim().min(2, 'Укажите имя — не короче двух символов.').max(60, 'Имя должно быть короче 60 символов.'),
+  phone: z.string().regex(/^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$/, 'Введите все 10 цифр номера после +7.'),
+  service: z.string().min(1, 'Выберите направление работ.'),
+  message: z.string().max(500, 'Описание должно быть короче 500 символов.'),
+})
+
+type ContactFormValues = z.infer<typeof contactSchema>
 
 function formatRussianPhone(nationalDigits: string) {
   const digits = nationalDigits.slice(0, 10)
@@ -29,7 +41,7 @@ function getPhoneCaretPosition(formatted: string, nationalDigitCount: number) {
 
   let seen = 0
   for (let index = 2; index < formatted.length; index += 1) {
-    if (/\d/.test(formatted[index])) seen += 1
+    if (/\\d/.test(formatted[index])) seen += 1
     if (seen === nationalDigitCount) return index + 1
   }
   return formatted.length
@@ -40,6 +52,17 @@ function Contact() {
   const [phone, setPhone] = useState('')
   const phoneInputRef = useRef<HTMLInputElement>(null)
   const pendingCaret = useRef<number | null>(null)
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+    mode: 'onBlur',
+    reValidateMode: 'onChange',
+    defaultValues: { name: '', phone: '', service: '', message: '' },
+  })
 
   useLayoutEffect(() => {
     if (pendingCaret.current === null || !phoneInputRef.current) return
@@ -47,21 +70,15 @@ function Contact() {
     pendingCaret.current = null
   }, [phone])
 
-  const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>, onChange: (value: string) => void) => {
     const inputValue = event.currentTarget.value
-    const rawDigits = inputValue.replace(/\D/g, '')
+    const rawDigits = inputValue.replace(/\\D/g, '')
     const rawDigitsBeforeCaret = inputValue
       .slice(0, event.currentTarget.selectionStart ?? inputValue.length)
-      .replace(/\D/g, '').length
-
-    // The leading 7 or 8 is the country/trunk prefix, not part of the national number.
-    const nationalDigits = rawDigits.startsWith('7') || rawDigits.startsWith('8')
-      ? rawDigits.slice(1)
-      : rawDigits
-    const nationalDigitsBeforeCaret = Math.max(
-      0,
-      rawDigitsBeforeCaret - (rawDigits.startsWith('7') || rawDigits.startsWith('8') ? 1 : 0),
-    )
+      .replace(/\\D/g, '').length
+    const hasCountryPrefix = rawDigits.startsWith('7') || rawDigits.startsWith('8')
+    const nationalDigits = hasCountryPrefix ? rawDigits.slice(1) : rawDigits
+    const nationalDigitsBeforeCaret = Math.max(0, rawDigitsBeforeCaret - (hasCountryPrefix ? 1 : 0))
     const formatted = rawDigits.length ? formatRussianPhone(nationalDigits) : ''
 
     pendingCaret.current = getPhoneCaretPosition(
@@ -69,12 +86,17 @@ function Contact() {
       Math.min(nationalDigitsBeforeCaret, nationalDigits.length, 10),
     )
     setPhone(formatted)
+    onChange(formatted)
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setNotice('Форма пока работает в демонстрационном режиме. Отправка заявок будет подключена позже.')
+  const onSubmit = (_values: ContactFormValues, event?: FormEvent<HTMLFormElement>) => {
+    event?.preventDefault()
+    setNotice('Поля заполнены верно. Отправка заявок пока не подключена — данные никуда не передаются.')
   }
+
+  const nameField = register('name')
+  const serviceField = register('service')
+  const messageField = register('message')
 
   return (
     <section className="contact-section" id="contacts" aria-labelledby="contact-title">
@@ -102,30 +124,77 @@ function Contact() {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="contact-form__intro">
             <span>ФОРМА ОБРАЩЕНИЯ</span>
             <p>Заполните несколько полей — это поможет быстрее разобраться в задаче.</p>
           </div>
+
           <label className="contact-field">
             <span>Как к вам обращаться</span>
-            <input name="name" type="text" placeholder="Ваше имя" autoComplete="name" required />
+            <input
+              {...nameField}
+              type="text"
+              placeholder="Ваше имя"
+              autoComplete="name"
+              aria-invalid={Boolean(errors.name)}
+              aria-describedby={errors.name ? 'contact-name-error' : undefined}
+            />
+            {errors.name && <span className="contact-field__error" id="contact-name-error" role="alert">{errors.name.message}</span>}
           </label>
+
           <label className="contact-field">
             <span>Номер телефона</span>
-            <input ref={phoneInputRef} name="phone" type="tel" inputMode="numeric" placeholder="+7 (___) ___-__-__" autoComplete="tel" value={phone} onChange={handlePhoneChange} maxLength={18} pattern="\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}" title="Введите полный номер: 10 цифр после +7" required />
+            <Controller
+              name="phone"
+              control={control}
+              render={({ field }) => (
+                <input
+                  ref={(element) => {
+                    field.ref(element)
+                    phoneInputRef.current = element
+                  }}
+                  name={field.name}
+                  type="tel"
+                  inputMode="numeric"
+                  placeholder="+7 (___) ___-__-__"
+                  autoComplete="tel"
+                  value={phone}
+                  onBlur={field.onBlur}
+                  onChange={(event) => handlePhoneChange(event, field.onChange)}
+                  aria-invalid={Boolean(errors.phone)}
+                  aria-describedby={errors.phone ? 'contact-phone-error' : undefined}
+                />
+              )}
+            />
+            {errors.phone && <span className="contact-field__error" id="contact-phone-error" role="alert">{errors.phone.message}</span>}
           </label>
+
           <label className="contact-field">
             <span>Направление работ</span>
-            <select name="service" defaultValue="">
-              <option value="" disabled>Выберите услугу</option>
+            <select
+              {...serviceField}
+              aria-invalid={Boolean(errors.service)}
+              aria-describedby={errors.service ? 'contact-service-error' : undefined}
+            >
+              <option value="">Выберите услугу</option>
               {services.map((service) => <option value={service} key={service}>{service}</option>)}
             </select>
+            {errors.service && <span className="contact-field__error" id="contact-service-error" role="alert">{errors.service.message}</span>}
           </label>
+
           <label className="contact-field">
             <span>Коротко о задаче</span>
-            <textarea name="message" rows={3} placeholder="Что нужно сделать?" />
+            <textarea
+              {...messageField}
+              rows={3}
+              placeholder="Что нужно сделать?"
+              aria-invalid={Boolean(errors.message)}
+              aria-describedby={errors.message ? 'contact-message-error' : undefined}
+            />
+            {errors.message && <span className="contact-field__error" id="contact-message-error" role="alert">{errors.message.message}</span>}
           </label>
+
           <button className="contact-form__submit" type="submit">
             Проверить заполнение <ArrowUpRight size={18} />
           </button>

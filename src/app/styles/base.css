@@ -118,7 +118,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-visual::after {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #f5f3ec 0%, rgb(245 243 236 / 97%) 30%, rgb(245 243 236 / 88%) 43%, rgb(245 243 236 / 48%) 59%, rgb(245 243 236 / 8%) 82%), linear-gradient(180deg, rgb(20 31 25 / 8%), transparent 30%, transparent 72%, rgb(20 31 25 / 30%));
+  background: linear-gradient(180deg, rgb(20 31 25 / 0%) 55%, rgb(20 31 25 / 48%) 100%), linear-gradient(90deg, #f5f3ec 0%, rgb(245 243 236 / 97%) 30%, rgb(245 243 236 / 88%) 43%, rgb(245 243 236 / 48%) 59%, rgb(245 243 236 / 8%) 82%);
   content: '';
   pointer-events: none;
 }

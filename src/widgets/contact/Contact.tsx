@@ -15,7 +15,7 @@ const services = [
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, 'Укажите имя — не короче двух символов.').max(60, 'Имя должно быть короче 60 символов.'),
-  phone: z.string().regex(/^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$/, 'Введите все 10 цифр номера после +7.'),
+  phone: z.string().regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введите все 10 цифр номера после +7.'),
   service: z.string().min(1, 'Выберите направление работ.'),
   message: z.string().max(500, 'Описание должно быть короче 500 символов.'),
 })
@@ -41,7 +41,7 @@ function getPhoneCaretPosition(formatted: string, nationalDigitCount: number) {
 
   let seen = 0
   for (let index = 2; index < formatted.length; index += 1) {
-    if (/\\d/.test(formatted[index])) seen += 1
+    if (/\d/.test(formatted[index])) seen += 1
     if (seen === nationalDigitCount) return index + 1
   }
   return formatted.length
@@ -72,10 +72,10 @@ function Contact() {
 
   const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>, onChange: (value: string) => void) => {
     const inputValue = event.currentTarget.value
-    const rawDigits = inputValue.replace(/\\D/g, '')
+    const rawDigits = inputValue.replace(/\D/g, '')
     const rawDigitsBeforeCaret = inputValue
       .slice(0, event.currentTarget.selectionStart ?? inputValue.length)
-      .replace(/\\D/g, '').length
+      .replace(/\D/g, '').length
     const hasCountryPrefix = rawDigits.startsWith('7') || rawDigits.startsWith('8')
     const nationalDigits = hasCountryPrefix ? rawDigits.slice(1) : rawDigits
     const nationalDigitsBeforeCaret = Math.max(0, rawDigitsBeforeCaret - (hasCountryPrefix ? 1 : 0))

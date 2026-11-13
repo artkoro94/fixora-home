@@ -147,6 +147,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .services-aside p { margin: 20px 0 7px; font-size: 18px; font-weight: 800; letter-spacing: -.04em; }
 .services-aside > span { max-width: 280px; color: rgb(32 45 40 / 70%); font-size: 14px; line-height: 1.7; }
 .services-aside a { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; font-size: 13px; font-weight: 800; }
+@media (min-width: 621px) and (max-width: 900px) {
+  .services-grid > .service-card--05 {
+    width: calc((100% - 14px) / 2);
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
 @media (max-width: 900px) {
   .services-section { padding: 88px 5% 30px; }
   .services-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 36px; }

@@ -15,7 +15,7 @@ const services = [
 
 const contactSchema = z.object({
   name: z.string().trim().min(2, 'Укажите имя — не короче двух символов.').max(60, 'Имя должно быть короче 60 символов.'),
-  phone: z.string().regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введите все 10 цифр номера после +7.'),
+  phone: z.string().regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введите номер в формате +7 (xxx) xxx-xx-xx.'),
   service: z.string().min(1, 'Выберите направление работ.'),
   message: z.string().max(500, 'Описание должно быть короче 500 символов.'),
 })
@@ -104,7 +104,7 @@ function Contact() {
           <p className="eyebrow"><span className="eyebrow__dot" />Давайте обсудим</p>
           <h2 id="contact-title">Расскажите,<br /><span>что нужно сделать.</span></h2>
           <p className="contact-heading__description">
-            Оставьте описание задачи — станет понятнее, с чего начать и чем мы сможем помочь.
+            Опишите задачу и оставьте телефон. Подскажем, с чего лучше начать.
           </p>
           <div className="contact-details">
             <a href="tel:+79991234567">
@@ -126,7 +126,7 @@ function Contact() {
         <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="contact-form__intro">
             <span>ФОРМА ОБРАЩЕНИЯ</span>
-            <p>Заполните несколько полей — это поможет быстрее разобраться в задаче.</p>
+            <p>Укажите телефон и коротко расскажите, что нужно сделать.</p>
           </div>
 
           <label className="contact-field">

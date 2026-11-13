@@ -22,9 +22,9 @@ function Header() {
   }
 
   return (
-    <header className="site-header" onKeyDown={handleHeaderKeyDown}>
+    <header className="site-header" id="top" onKeyDown={handleHeaderKeyDown}>
       <div className="site-header__inner">
-        <a className="brand" href="#home" aria-label="FIXORA HOME — на главную" onClick={closeMenu}>
+        <a className="brand" href="#top" aria-label="FIXORA HOME — на главную" onClick={closeMenu}>
           <span className="brand__name">FIXORA<span>.</span></span>
           <span className="brand__caption">HOME SERVICE</span>
         </a>

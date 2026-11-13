@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState, type ChangeEvent, type FormEvent } from 'react'
+import { useLayoutEffect, useRef, useState, type ChangeEvent } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -89,8 +89,7 @@ function Contact() {
     onChange(formatted)
   }
 
-  const onSubmit = (_values: ContactFormValues, event?: FormEvent<HTMLFormElement>) => {
-    event?.preventDefault()
+  const onSubmit = (_values: ContactFormValues) => {
     setNotice('Поля заполнены верно. Отправка заявок пока не подключена — данные никуда не передаются.')
   }
 

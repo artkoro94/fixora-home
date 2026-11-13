@@ -29,16 +29,13 @@
   .advantage-card:nth-child(2) { border-right: 0; }
   .advantage-card:nth-child(3) { padding-left: 24px; border-bottom: 0; }
   .advantage-card:last-child { border-bottom: 0; }
-}
-@media (max-width: 900px) {
   .advantages-heading { align-items: center; text-align: center; }
   .advantages-heading .eyebrow { justify-content: center; }
   .advantages-heading__description { text-align: center; }
   .advantage-card { align-items: center; text-align: center; }
   .advantage-card h3, .advantage-card p { margin-right: auto; margin-left: auto; }
   .advantage-card__line { align-self: center; }
-  .advantages-link { display: flex; width: fit-content; justify-content: center; margin-right: auto; margin-left: auto; }
-}
+  .advantages-link { display: flex; width: fit-content; justify-content: center; margin-right: auto; margin-left: auto; }}
 @media (max-width: 620px) {
   .advantages-section { padding: 76px 22px; }
   .advantages-heading h2 { font-size: clamp(40px, 10vw, 54px); }

@@ -74,11 +74,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-note span:last-child { display: grid; gap: 3px; }
 .hero-note strong { font-size: 11px; }
 .hero-note small { color: rgb(32 45 40 / 58%); font-size: 9px; }
-.next-section { max-width: 1440px; margin: 0 auto; padding: 120px 5.5%; background: #202d28; color: #f5f3ec; }
-.next-section h2 { margin: 25px 0 16px; font-size: clamp(40px, 5vw, 68px); line-height: 1; letter-spacing: -.07em; }
-.next-section h2 span { color: #d7f36a; }
-.next-section > p:last-child { color: rgb(245 243 236 / 65%); font-size: 14px; }
-
 @media (max-width: 1050px) {
   .desktop-nav { gap: 16px; }
   .desktop-nav__link { font-size: 11px; }
@@ -108,9 +103,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .button { min-height: 52px; padding: 0 19px; font-size: 12px; }
   .hero-visual { min-height: 430px; }
   .hero-visual__topline, .hero-visual__caption { right: 18px; left: 18px; font-size: 8px; }
-  .hero-note { right: 16px; bottom: 65px; }
-    .next-section { padding: 82px 22px; }
-}
+  .hero-note { right: 16px; bottom: 65px; }}
 @media (max-width: 390px) {
   .hero__title { font-size: 44px; }
   .hero__actions { align-items: flex-start; flex-direction: column; }

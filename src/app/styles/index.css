@@ -375,3 +375,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   .contact-details > a > svg:last-child, .contact-field input, .contact-field select, .contact-field textarea, .contact-form__submit { transition: none; }
 }
+
+/* Contact form validation */
+
+.contact-field__error { color: #b42318; font-size: 12px; line-height: 1.5; }
+.contact-field input[aria-invalid="true"],
+.contact-field select[aria-invalid="true"],
+.contact-field textarea[aria-invalid="true"] { border-color: #b42318; background: rgb(180 35 24 / 3%); }
+.contact-field input[aria-invalid="true"]:focus,
+.contact-field select[aria-invalid="true"]:focus,
+.contact-field textarea[aria-invalid="true"]:focus { border-color: #b42318; }

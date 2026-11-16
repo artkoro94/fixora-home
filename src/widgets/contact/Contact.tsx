@@ -1,8 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ChangeEvent } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 import { ArrowUpRight, Check, Mail, MapPin, Phone, X } from 'lucide-react'
+import { contactSchema, formatRussianPhone, getPhoneCaretPosition, type ContactFormValues } from './contact-validation'
 
 const services = [
   'Электрика',
@@ -13,39 +13,6 @@ const services = [
   'Другое',
 ]
 
-const contactSchema = z.object({
-  name: z.string().trim().min(2, 'Укажите имя — не короче двух символов.').max(60, 'Имя должно быть короче 60 символов.'),
-  phone: z.string().regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введите номер в формате +7 (xxx) xxx-xx-xx.'),
-  service: z.string().min(1, 'Выберите направление работ.'),
-  message: z.string().max(500, 'Описание должно быть короче 500 символов.'),
-})
-
-type ContactFormValues = z.infer<typeof contactSchema>
-
-function formatRussianPhone(nationalDigits: string) {
-  const digits = nationalDigits.slice(0, 10)
-  if (!digits) return '+7'
-
-  let formatted = '+7'
-  if (digits.length > 0) formatted += ' (' + digits.slice(0, 3)
-  if (digits.length >= 3) formatted += ')'
-  if (digits.length > 3) formatted += ' ' + digits.slice(3, 6)
-  if (digits.length > 6) formatted += '-' + digits.slice(6, 8)
-  if (digits.length > 8) formatted += '-' + digits.slice(8, 10)
-  return formatted
-}
-
-function getPhoneCaretPosition(formatted: string, nationalDigitCount: number) {
-  if (!formatted) return 0
-  if (nationalDigitCount === 0) return 2
-
-  let seen = 0
-  for (let index = 2; index < formatted.length; index += 1) {
-    if (/\d/.test(formatted[index])) seen += 1
-    if (seen === nationalDigitCount) return index + 1
-  }
-  return formatted.length
-}
 
 function Contact() {
   const [isSuccessOpen, setIsSuccessOpen] = useState(false)

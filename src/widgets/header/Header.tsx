@@ -5,7 +5,7 @@ const navigation = [
   { label: 'Услуги', href: '#services' },
   { label: 'Преимущества', href: '#advantages' },
   { label: 'Как мы работаем', href: '#process' },
-  { label: 'Контакты', href: '#contacts' },
+  { label: 'Контакты', href: '#contact-form' },
 ]
 
 function Header() {

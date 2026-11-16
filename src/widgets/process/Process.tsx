@@ -34,7 +34,7 @@ function Process() {
           </div>
           <div className="process-heading__aside">
             <p>Никакой сложной схемы. Обсуждаем, договариваемся и делаем то, о чём условились.</p>
-            <a href="#contacts">Обсудить задачу <ArrowUpRight size={18} /></a>
+            <a href="#contact-form">Обсудить задачу <ArrowUpRight size={18} /></a>
           </div>
         </div>
         <ol className="process-steps">

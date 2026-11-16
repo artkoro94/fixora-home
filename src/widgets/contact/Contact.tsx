@@ -82,6 +82,8 @@ function Contact() {
           <p className="contact-heading__description">
             Опишите задачу и оставьте телефон. Подскажем, с чего лучше начать.
           </p>
+        </div>
+
           <div className="contact-details">
             <a href="tel:+79991234567">
               <span className="contact-details__icon"><Phone size={18} /></span>
@@ -97,8 +99,6 @@ function Contact() {
               <span><small>Где работаем</small><strong>Уточняется при обращении</strong></span>
             </div>
           </div>
-        </div>
-
         <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="contact-form__intro">
             <span>ФОРМА ОБРАЩЕНИЯ</span>

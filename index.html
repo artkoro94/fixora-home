@@ -40,7 +40,23 @@
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="page-loader" role="status" aria-label="Загрузка сайта">
+        <span class="page-loader__spinner" aria-hidden="true"></span>
+        <span class="page-loader__label">FIXORA HOME</span>
+      </div>
+    </div>
+    <noscript>
+      <div class="noscript-message">Для работы сайта необходимо включить JavaScript.</div>
+    </noscript>
+    <style>
+      .page-loader{position:fixed;inset:0;z-index:9999;display:grid;place-content:center;justify-items:center;gap:18px;background:#f5f3ec;color:#202d28}
+      .page-loader__spinner{width:38px;height:38px;border:3px solid rgb(32 45 40 / 15%);border-top-color:#a6c93f;border-radius:50%;animation:fixora-spin .8s linear infinite}
+      .page-loader__label{font:800 10px/1.2 Manrope,sans-serif;letter-spacing:2px}
+      .noscript-message{padding:24px;text-align:center;font:600 14px/1.5 Manrope,sans-serif}
+      @keyframes fixora-spin{to{transform:rotate(360deg)}}
+      @media(prefers-reduced-motion:reduce){.page-loader__spinner{animation-duration:2s}}
+    </style>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

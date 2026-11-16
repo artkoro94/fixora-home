@@ -1,8 +1,8 @@
-import { useLayoutEffect, useRef, useState, type ChangeEvent } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type ChangeEvent } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowUpRight, Check, Mail, MapPin, Phone, X } from 'lucide-react'
 
 const services = [
   'Электрика',
@@ -48,8 +48,9 @@ function getPhoneCaretPosition(formatted: string, nationalDigitCount: number) {
 }
 
 function Contact() {
-  const [notice, setNotice] = useState('')
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false)
   const [phone, setPhone] = useState('')
+  const successDialogRef = useRef<HTMLDialogElement>(null)
   const phoneInputRef = useRef<HTMLInputElement>(null)
   const pendingCaret = useRef<number | null>(null)
   const {
@@ -89,8 +90,16 @@ function Contact() {
     onChange(formatted)
   }
 
+  useEffect(() => {
+    const dialog = successDialogRef.current
+    if (!dialog) return
+
+    if (isSuccessOpen && !dialog.open) dialog.showModal()
+    if (!isSuccessOpen && dialog.open) dialog.close()
+  }, [isSuccessOpen])
+
   const onSubmit = () => {
-    setNotice('Поля заполнены верно. Отправка заявок пока не подключена — данные никуда не передаются.')
+    setIsSuccessOpen(true)
   }
 
   const nameField = register('name')
@@ -195,11 +204,40 @@ function Contact() {
           </label>
 
           <button className="contact-form__submit" type="submit">
-            Проверить заполнение <ArrowUpRight size={18} />
+            Отправить форму
           </button>
-          <p className="contact-form__note" aria-live="polite">
-            {notice || 'Демонстрационная форма: данные никуда не отправляются.'}
+          <p className="contact-form__note">
+            Демонстрационная форма — данные никуда не отправляются.
           </p>
+
+          <dialog
+            ref={successDialogRef}
+            className="contact-success-dialog"
+            aria-labelledby="contact-success-title"
+            aria-describedby="contact-success-description"
+            onClose={() => setIsSuccessOpen(false)}
+            onClick={(event) => {
+              if (event.target === event.currentTarget) setIsSuccessOpen(false)
+            }}
+          >
+            <div className="contact-success-dialog__icon" aria-hidden="true"><Check size={25} /></div>
+            <button
+              className="contact-success-dialog__close"
+              type="button"
+              aria-label="Закрыть окно"
+              onClick={() => setIsSuccessOpen(false)}
+            >
+              <X size={19} />
+            </button>
+            <p className="contact-success-dialog__eyebrow">FIXORA HOME</p>
+            <h3 id="contact-success-title">Заявка оформлена</h3>
+            <p id="contact-success-description">
+              Спасибо! Это демонстрационная версия сайта. Данные формы никуда не отправляются.
+            </p>
+            <button className="contact-success-dialog__action" type="button" onClick={() => setIsSuccessOpen(false)}>
+              Понятно
+            </button>
+          </dialog>
         </form>
       </div>
     </section>

@@ -99,7 +99,7 @@ function Contact() {
               <span><small>Где работаем</small><strong>Уточняется при обращении</strong></span>
             </div>
           </div>
-        <form className="contact-form" id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
+        <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           <div className="contact-form__intro">
             <span>ФОРМА ОБРАЩЕНИЯ</span>
             <p>Укажите телефон и коротко расскажите, что нужно сделать.</p>

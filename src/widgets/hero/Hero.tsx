@@ -22,7 +22,7 @@ function Hero() {
         </p>
 
         <div className="hero__actions">
-          <a className="button button--lime" href="#contact-form">
+          <a className="button button--lime" href="#contacts">
             Обсудить задачу <ArrowUpRight size={18} strokeWidth={1.8} />
           </a>
           <a className="hero__secondary-link" href="#services">

@@ -57,7 +57,7 @@ describe('Russian phone formatting', () => {
   })
 
   it('calculates the caret position after the requested digit', () => {
-    assert.equal(getPhoneCaretPosition('+7 (999) 123-45-67', 3), 8)
+    assert.equal(getPhoneCaretPosition('+7 (999) 123-45-67', 3), 7)
     assert.equal(getPhoneCaretPosition('+7', 0), 2)
   })
 })

@@ -29,7 +29,7 @@ function ServiceCard({ service }: { service: Service }) {
         <p>{service.description}</p>
         <ul>{service.examples.map((example) => <li key={example}>{example}</li>)}</ul>
       </div>
-      <a className="service-card__link" href="#contacts" aria-label={`Обсудить услугу: ${service.title}`}>
+      <a className="service-card__link" href="#contact-form" aria-label={`Обсудить услугу: ${service.title}`}>
         Обсудить задачу <ArrowUpRight size={18} strokeWidth={1.7} />
       </a>
     </article>

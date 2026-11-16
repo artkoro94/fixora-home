@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "typecheck": "tsc -b --pretty"
+    "typecheck": "tsc -b --pretty",
+    "test": "node --experimental-strip-types --test"
   },
   "dependencies": {
     "@hookform/resolvers": "^7.0.6",

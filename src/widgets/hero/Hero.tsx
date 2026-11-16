@@ -45,7 +45,7 @@ function Hero() {
         <img
           className="hero-visual__image"
           src={`${imageBase}hero-living-room-hq.webp`}
-          srcSet={`${imageBase}hero-living-room-hq.webp 1x, ${imageBase}hero-living-room-2x.webp 2x`}
+          srcSet={`${imageBase}hero-living-room-hq.webp 1536w, ${imageBase}hero-living-room-2x.webp 3072w`}
           sizes="100vw"
           width="1536"
           height="1024"

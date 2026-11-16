@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://artkoro94.github.io/fixora-home/sitemap.xml

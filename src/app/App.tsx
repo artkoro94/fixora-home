@@ -9,8 +9,9 @@ import Contact from '../widgets/contact/Contact'
 function App() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Перейти к содержимому</a>
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <Services />
         <Advantages />

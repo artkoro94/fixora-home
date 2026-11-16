@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 export const contactSchema = z.object({
   name: z.string().trim().min(2, 'Укажите имя — не короче двух символов.').max(60, 'Имя должно быть короче 60 символов.'),
-  phone: z.string().regex(/^\\+7 \\(\\d{3}\\) \\d{3}-\\d{2}-\\d{2}$/, 'Введите номер в формате +7 (xxx) xxx-xx-xx.'),
+  phone: z.string().regex(/^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/, 'Введите номер в формате +7 (xxx) xxx-xx-xx.'),
   service: z.string().min(1, 'Выберите направление работ.'),
   message: z.string().max(500, 'Описание должно быть короче 500 символов.'),
 })
@@ -28,7 +28,7 @@ export function getPhoneCaretPosition(formatted: string, nationalDigitCount: num
 
   let seen = 0
   for (let index = 2; index < formatted.length; index += 1) {
-    if (/\\d/.test(formatted[index])) seen += 1
+    if (/\d/.test(formatted[index])) seen += 1
     if (seen === nationalDigitCount) return index + 1
   }
   return formatted.length

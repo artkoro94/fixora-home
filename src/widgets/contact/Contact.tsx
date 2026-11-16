@@ -13,7 +13,6 @@ const services = [
   'Другое',
 ]
 
-type ContactFormValues = z.infer<typeof contactSchema>
 
 function Contact() {
   const [isSuccessOpen, setIsSuccessOpen] = useState(false)

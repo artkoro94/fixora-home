@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ChangeEvent } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ArrowUpRight, Check, ChevronDown, Mail, MapPin, Phone, X } from 'lucide-react'
+import { Check, ChevronDown, Mail, MapPin, Phone, X } from 'lucide-react'
 import { contactSchema, formatRussianPhone, getPhoneCaretPosition, type ContactFormValues } from './contact-validation'
 
 const services = [
@@ -88,7 +88,7 @@ function Contact() {
             <a className="group relative flex items-center gap-[14px] border-b border-[rgb(32_45_40_/_16%)] py-[17px] max-[900px]:min-h-[82px] max-[900px]:grid max-[900px]:grid-cols-[minmax(0,1fr)_auto] max-[900px]:gap-2 max-[900px]:bg-[rgb(255_255_255_/_28%)] max-[900px]:px-[14px] max-[900px]:text-center max-[900px]:hover:bg-[rgb(215_243_106_/_22%)] min-[621px]:max-[900px]:grid-cols-[1fr_auto_auto_1fr]" href="tel:+79991234567">
               <span className="grid size-[42px] shrink-0 place-items-center rounded-full border border-[rgb(32_45_40_/_20%)] max-[900px]:hidden"><Phone size={18} /></span>
               <span className="grid flex-1 gap-1 max-[900px]:col-start-1 max-[900px]:justify-items-center min-[621px]:max-[900px]:col-start-2"><small className="text-[11px] text-[rgb(32_45_40_/_55%)]">Позвонить</small><strong className="text-[13px] font-extrabold">+7 (999) 123-45-67</strong></span>
-              <ArrowUpRight className="transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px] max-[900px]:col-start-2 max-[900px]:row-start-1 max-[900px]:size-[22px] max-[900px]:rounded-full max-[900px]:border max-[900px]:border-[rgb(32_45_40_/_28%)] max-[900px]:p-[3px] min-[621px]:max-[900px]:col-start-3" size={18} />
+              
             </a>
             <div className="flex items-center gap-[14px] border-b border-[rgb(32_45_40_/_16%)] py-[17px] max-[900px]:min-h-[82px] max-[900px]:grid max-[900px]:grid-cols-[minmax(0,1fr)_auto] max-[900px]:gap-2 max-[900px]:px-[14px] max-[900px]:text-center">
               <span className="grid size-[42px] shrink-0 place-items-center rounded-full border border-[rgb(32_45_40_/_20%)] max-[900px]:hidden"><Mail size={18} /></span>

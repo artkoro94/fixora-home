@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ChangeEvent } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ArrowUpRight, Check, Mail, MapPin, Phone, X } from 'lucide-react'
+import { ArrowUpRight, Check, ChevronDown, Mail, MapPin, Phone, X } from 'lucide-react'
 import { contactSchema, formatRussianPhone, getPhoneCaretPosition, type ContactFormValues } from './contact-validation'
 
 const services = [
@@ -149,15 +149,18 @@ function Contact() {
 
           <label className="grid gap-[9px]">
             <span className="text-[12px] font-extrabold">Направление работ</span>
-            <select
-              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none focus-visible:outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base cursor-pointer pr-12"
-              {...serviceField}
-              aria-invalid={Boolean(errors.service)}
-              aria-describedby={errors.service ? 'contact-service-error' : undefined}
-            >
-              <option value="">Выберите услугу</option>
-              {services.map((service) => <option value={service} key={service}>{service}</option>)}
-            </select>
+            <span className="relative block">
+              <select
+                className="w-full min-w-0 appearance-none border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] pr-12 text-[13px] text-forest outline-none focus-visible:outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base cursor-pointer"
+                {...serviceField}
+                aria-invalid={Boolean(errors.service)}
+                aria-describedby={errors.service ? 'contact-service-error' : undefined}
+              >
+                <option value="">Выберите услугу</option>
+                {services.map((service) => <option value={service} key={service}>{service}</option>)}
+              </select>
+              <ChevronDown className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-forest" size={18} aria-hidden="true" />
+            </span>
             {errors.service && <span className="text-[12px] leading-[1.5] text-[#b42318]" id="contact-service-error" role="alert">{errors.service.message}</span>}
           </label>
 

@@ -13,8 +13,8 @@ function Process() {
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-[58px] flex items-end justify-between gap-12 max-[900px]:mb-[38px] max-[900px]:flex-col max-[900px]:items-center max-[900px]:gap-[18px] max-[900px]:text-center">
           <div>
-            <p className="eyebrow max-[900px]:justify-center"><span className="eyebrow__dot" />Всего четыре шага</p>
-            <h2 className="mt-[22px]">От задачи<br /><span className="text-[rgb(32_45_40_/_38%)]">до результата.</span></h2>
+            <p className="inline-flex items-center gap-[10px] text-[10px] font-extrabold tracking-[1.8px] text-[rgb(32_45_40_/_62%)] uppercase max-[900px]:justify-center"><span className="size-[7px] rounded-full bg-[#a8c94a] shadow-[0_0_0_4px_rgb(168_201_74_/_16%)]" />Всего четыре шага</p>
+            <h2 className="mt-[22px] text-[clamp(42px,5vw,68px)] leading-[1.02] font-extrabold tracking-[-.075em] max-[620px]:text-[clamp(40px,10vw,54px)]">От задачи<br /><span className="text-[rgb(32_45_40_/_38%)]">до результата.</span></h2>
           </div>
           <div className="mb-[6px] grid max-w-[390px] justify-items-start gap-5 max-[900px]:max-w-[560px] max-[900px]:justify-items-center max-[900px]:text-center max-[620px]:justify-items-center">
             <p className="m-0 text-[14px] leading-[1.85] text-[rgb(32_45_40_/_66%)]">Никакой сложной схемы. Обсуждаем, договариваемся и делаем то, о чём условились.</p>

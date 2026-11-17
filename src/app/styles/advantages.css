@@ -44,6 +44,3 @@
   .advantage-card:last-child { border-bottom: 0; }
   .advantage-card h3 { font-size: 22px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .advantage-card, .advantage-card__line, .advantages-link { transition: none; }
-}

@@ -23,14 +23,13 @@ function Header() {
   return (
     <header className="relative z-20 w-full bg-cream px-[5.5%] max-[760px]:px-[22px]" id="top" onKeyDown={handleHeaderKeyDown}>
       <div className="mx-auto flex min-h-[92px] max-w-[1440px] items-center justify-between border-b border-[rgb(32_45_40_/_10%)] max-[760px]:min-h-[76px]">
-        <a className="inline-flex items-baseline gap-[10px] whitespace-nowrap" href="#top" aria-label="FIXORA HOME — на главную" onClick={closeMenu}>
-          <span className="text-[22px] font-extrabold tracking-[-1.5px] max-[760px]:text-[20px]">FIXORA<span className="text-[#a6c93f]">.</span></span>
-          <span className="text-[9px] font-bold tracking-[1.7px] text-[rgb(32_45_40_/_55%)] max-[760px]:text-[8px]">HOME SERVICE</span>
+        <a className="inline-flex items-baseline gap-[10px] whitespace-nowrap" href="#top" aria-label="FIXORA.HOME — на главную" onClick={closeMenu}>
+          <span className="brand-wordmark text-[22px] font-extrabold tracking-[-1.5px] max-[760px]:text-[20px]">FIXORA<span className="text-[#a6c93f]">.</span>HOME</span>
         </a>
 
         <nav className="flex items-center gap-[clamp(18px,2.3vw,36px)] max-[1050px]:gap-4 max-[760px]:hidden" aria-label="Основная навигация">
           {navigation.map((item) => (
-            <a className="text-xs font-semibold text-[rgb(32_45_40_/_76%)] transition-colors duration-200 hover:text-[#789c35] max-[1050px]:text-[11px]" href={item.href} key={item.href}>
+            <a className="header-nav-link text-xs font-semibold text-[rgb(32_45_40_/_76%)] transition-colors duration-200 hover:text-[#789c35] max-[1050px]:text-[11px]" href={item.href} key={item.href}>
               {item.label}
             </a>
           ))}
@@ -63,7 +62,7 @@ function Header() {
       >
         <nav className="grid px-[22px] pt-[10px] pb-6" aria-label="Мобильная навигация">
           {navigation.map((item) => (
-            <a className="flex items-center justify-between border-b border-[rgb(32_45_40_/_9%)] py-4 text-sm font-bold" href={item.href} key={item.href} onClick={closeMenu}>
+            <a className="header-nav-link flex items-center justify-between border-b border-[rgb(32_45_40_/_9%)] py-4 text-sm font-bold" href={item.href} key={item.href} onClick={closeMenu}>
               {item.label}<ArrowUpRight size={18} />
             </a>
           ))}

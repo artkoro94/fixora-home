@@ -8,6 +8,8 @@
   --font-sans: 'Manrope', sans-serif;
 }
 
+html { background: #f5f3ec; }
+
 :root {
   font-family: 'Manrope', sans-serif;
   color: #202d28;
@@ -22,7 +24,9 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { min-width: 320px; min-height: 100vh; margin: 0; }
+body { min-width: 320px; min-height: 100vh; min-height: 100svh; margin: 0; }
+
+#root { min-height: 100vh; min-height: 100svh; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a[href], button:not(:disabled), select { cursor: pointer; }
@@ -141,3 +145,7 @@ a[href], button:not(:disabled), select { cursor: pointer; }
     transition: none !important;
   }
 }
+
+
+/* Extend the footer background into the iPhone bottom safe area. */
+.site-footer { padding-bottom: calc(26px + env(safe-area-inset-bottom, 0px)); }

@@ -174,7 +174,7 @@ function Contact() {
             {errors.message && <span className="text-[12px] leading-[1.5] text-[#b42318]" id="contact-message-error" role="alert">{errors.message.message}</span>}
           </label>
 
-          <button className="flex min-h-[54px] w-full cursor-pointer items-center justify-center border-0 bg-forest px-[18px] text-[13px] font-extrabold text-cream transition-colors duration-200 hover:bg-[#34483e]" type="submit">
+          <button className="contact-submit flex min-h-[54px] w-full cursor-pointer items-center justify-center border-0 bg-forest px-[18px] text-[13px] font-extrabold text-cream transition-colors duration-200 hover:bg-[#34483e]" type="submit">
             Отправить форму
           </button>
           <p className="-mt-2 mb-0 min-h-5 text-[11px] leading-[1.6] text-[rgb(32_45_40_/_55%)]">
@@ -205,7 +205,7 @@ function Contact() {
             <p className="mt-[14px] mb-[26px] text-[13px] leading-[1.75] text-[rgb(32_45_40_/_68%)]" id="contact-success-description">
               Спасибо! Это демонстрационная версия сайта. Данные формы никуда не отправляются.
             </p>
-            <button className="min-h-[50px] w-full cursor-pointer border-0 bg-forest text-[13px] font-extrabold text-cream hover:bg-[#34483e]" type="button" onClick={() => setIsSuccessOpen(false)}>
+            <button className="contact-success-action min-h-[50px] w-full cursor-pointer border-0 bg-forest text-[13px] font-extrabold text-cream hover:bg-[#34483e]" type="button" onClick={() => setIsSuccessOpen(false)}>
               Понятно
             </button>
           </dialog>

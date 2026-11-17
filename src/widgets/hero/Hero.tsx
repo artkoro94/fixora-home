@@ -20,7 +20,7 @@ function Hero() {
           Ремонтируем, устанавливаем и помогаем с повседневными задачами по дому.
         </p>
 
-        <div className="mt-[34px] flex flex-wrap items-center gap-[25px] max-[760px]:mt-[26px] max-[760px]:w-full max-[760px]:justify-center max-[760px]:gap-[18px] max-[390px]:items-start max-[390px]:flex-col">
+        <div className="mt-[34px] flex flex-wrap items-center gap-[25px] max-[760px]:mt-[26px] max-[760px]:w-full max-[760px]:justify-center max-[760px]:gap-[18px] max-[390px]:items-center max-[390px]:flex-col">
           <a className="hero-primary-cta inline-flex min-h-[54px] items-center justify-center gap-[18px] rounded-full bg-lime px-6 text-[13px] font-extrabold text-forest transition duration-200 hover:-translate-y-0.5 hover:bg-[#c8e85a] max-[760px]:min-h-[52px] max-[760px]:px-[19px] max-[760px]:text-xs" href="#contacts">
             Обсудить задачу <ArrowUpRight className="max-[760px]:hidden" size={18} strokeWidth={1.8} />
           </a>

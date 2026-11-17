@@ -54,12 +54,12 @@ function Hero() {
         <div className="absolute top-[25px] right-[5.5%] left-[5.5%] z-[1] flex justify-between text-[9px] font-extrabold tracking-[1.5px] text-forest max-[760px]:right-[18px] max-[760px]:left-[18px] max-[760px]:text-[8px]">
           <span>ЗАБОТА О ПРОСТРАНСТВЕ</span>
         </div>
-        <div className="absolute right-[5.5%] bottom-[25px] left-[5.5%] z-[1] flex justify-between text-[9px] font-extrabold tracking-[1.5px] text-forest max-[760px]:right-[18px] max-[760px]:left-[18px] max-[760px]:text-[8px] max-[390px]:gap-3">
+        <div className="absolute right-[5.5%] bottom-[25px] left-[5.5%] z-[1] flex justify-between text-[9px] font-extrabold tracking-[1.5px] text-forest max-[760px]:hidden">
           <span>КОМФОРТ НАЧИНАЕТСЯ С МЕЛОЧЕЙ</span><span>FIXORA HOME</span>
         </div>
       </div>
 
-      <div className="absolute right-[5.5%] bottom-[76px] z-[2] flex items-center gap-[11px] rounded-[3px] border border-white/50 bg-[rgb(245_243_236_/_94%)] px-[18px] py-[14px] shadow-[0_12px_35px_rgb(32_45_40_/_12%)] backdrop-blur-[12px] max-[760px]:right-4 max-[760px]:bottom-[65px]">
+      <div className="absolute right-[5.5%] bottom-[76px] z-[2] flex items-center gap-[11px] rounded-[3px] border border-white/50 bg-[rgb(245_243_236_/_94%)] px-[18px] py-[14px] shadow-[0_12px_35px_rgb(32_45_40_/_12%)] backdrop-blur-[12px] max-[760px]:right-auto max-[760px]:bottom-[65px] max-[760px]:left-1/2 max-[760px]:w-max max-[760px]:-translate-x-1/2">
         <span className="grid h-[27px] w-[27px] place-items-center rounded-full bg-lime"><Check size={15} /></span>
         <span className="grid gap-[3px]"><strong className="text-[11px]">Всё по делу</strong><small className="text-[9px] text-[rgb(32_45_40_/_58%)]">Понятно с первого шага</small></span>
       </div>

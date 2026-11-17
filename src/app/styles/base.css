@@ -26,7 +26,54 @@ body { min-width: 320px; min-height: 100vh; margin: 0; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a[href], button:not(:disabled), select { cursor: pointer; }
-:focus-visible { outline: 3px solid #789c35; outline-offset: 4px; }
+:focus-visible:not(input):not(textarea):not(select) { outline: 3px solid #789c35; outline-offset: 4px; }
+
+/* Explicit interaction states: keep them outside Tailwind's utility layers. */
+.header-cta,
+.hero-primary-cta,
+.service-card,
+.service-card__link,
+.contact-submit,
+.contact-success-action {
+  transition-timing-function: ease;
+}
+
+.header-cta,
+.hero-primary-cta,
+.contact-submit,
+.contact-success-action {
+  transition-property: transform, background-color, color;
+  transition-duration: 200ms;
+}
+
+.header-cta:hover,
+.contact-submit:hover,
+.contact-success-action:hover {
+  background-color: #34483e;
+}
+
+.hero-primary-cta:hover {
+  transform: translateY(-2px);
+  background-color: #c8e85a;
+}
+
+.service-card {
+  transition-property: transform, border-color;
+  transition-duration: 250ms;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(32 45 40 / 24%);
+}
+
+.service-card__link {
+  transition: gap 200ms ease;
+}
+
+.service-card__link:hover {
+  gap: 22px;
+}
 
 .skip-link {
   position: fixed;

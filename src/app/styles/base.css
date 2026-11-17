@@ -185,3 +185,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero__actions { align-items: flex-start; flex-direction: column; }
   .hero-visual__caption { gap: 12px; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
+}

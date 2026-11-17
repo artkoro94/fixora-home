@@ -71,8 +71,19 @@ a[href], button:not(:disabled), select { cursor: pointer; }
   background-color: #34483e;
 }
 
-.header-phone:hover,
+.header-phone:hover {
+  color: #789c35;
+}
+
 .footer-phone:hover {
+  color: #d7f36a;
+}
+
+.footer-nav-link {
+  transition: color 200ms ease;
+}
+
+.footer-nav-link:hover {
   color: #d7f36a;
 }
 

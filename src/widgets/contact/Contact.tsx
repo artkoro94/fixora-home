@@ -90,7 +90,7 @@ function Contact() {
               <span className="grid flex-1 gap-1 max-[900px]:col-start-1 max-[900px]:justify-items-center min-[621px]:max-[900px]:col-start-2"><small className="text-[11px] text-[rgb(32_45_40_/_55%)]">Позвонить</small><strong className="text-[13px] font-extrabold">+7 (999) 123-45-67</strong></span>
               <ArrowUpRight className="transition-transform duration-200 group-hover:translate-x-[3px] group-hover:-translate-y-[3px] max-[900px]:col-start-2 max-[900px]:row-start-1 max-[900px]:size-[22px] max-[900px]:rounded-full max-[900px]:border max-[900px]:border-[rgb(32_45_40_/_28%)] max-[900px]:p-[3px] min-[621px]:max-[900px]:col-start-3" size={18} />
             </a>
-            <div>
+            <div className="flex items-center gap-[14px] border-b border-[rgb(32_45_40_/_16%)] py-[17px] max-[900px]:min-h-[82px] max-[900px]:grid max-[900px]:grid-cols-[minmax(0,1fr)_auto] max-[900px]:gap-2 max-[900px]:px-[14px] max-[900px]:text-center">
               <span className="grid size-[42px] shrink-0 place-items-center rounded-full border border-[rgb(32_45_40_/_20%)] max-[900px]:hidden"><Mail size={18} /></span>
               <span className="grid flex-1 gap-1 max-[900px]:col-span-2 max-[900px]:justify-items-center"><small className="text-[11px] text-[rgb(32_45_40_/_55%)]">Напишите нам</small><strong className="text-[13px] font-extrabold">Контактный канал скоро появится</strong></span>
             </div>
@@ -110,6 +110,7 @@ function Contact() {
             <input
               {...nameField}
               type="text"
+              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base"
               placeholder="Ваше имя"
               autoComplete="name"
               aria-invalid={Boolean(errors.name)}
@@ -131,6 +132,7 @@ function Contact() {
                   }}
                   name={field.name}
                   type="tel"
+                  className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base"
                   inputMode="numeric"
                   placeholder="+7 (___) ___-__-__"
                   autoComplete="tel"
@@ -148,6 +150,7 @@ function Contact() {
           <label className="grid gap-[9px]">
             <span className="text-[12px] font-extrabold">Направление работ</span>
             <select
+              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base cursor-pointer appearance-none pr-12"
               {...serviceField}
               aria-invalid={Boolean(errors.service)}
               aria-describedby={errors.service ? 'contact-service-error' : undefined}
@@ -161,6 +164,7 @@ function Contact() {
           <label className="grid gap-[9px]">
             <span className="text-[12px] font-extrabold">Коротко о задаче</span>
             <textarea
+              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base min-h-[100px] resize-y"
               {...messageField}
               rows={3}
               placeholder="Что нужно сделать?"

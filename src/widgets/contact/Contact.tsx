@@ -77,8 +77,8 @@ function Contact() {
     <section className="bg-[#e9e8df] px-[5.5%] py-[112px] text-forest max-[900px]:px-[5%] max-[900px]:py-[88px] max-[620px]:px-[22px] max-[620px]:py-[76px]" id="contacts" aria-labelledby="contact-title">
       <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)] grid-rows-[auto_1fr] items-start gap-x-[clamp(42px,7vw,104px)] [grid-template-areas:'heading_form'_'details_form'] max-[900px]:grid-cols-1 max-[900px]:grid-rows-[auto] max-[900px]:justify-items-center max-[900px]:gap-[42px] max-[900px]:[grid-template-areas:'heading'_'form'_'details']">
         <div className="[grid-area:heading] w-full max-[900px]:text-center">
-          <p className="eyebrow"><span className="eyebrow__dot" />Давайте обсудим</p>
-          <h2 className="mt-[22px] mb-[18px] max-[620px]:text-[clamp(40px,10vw,54px)]" id="contact-title">Расскажите,<br /><span className="text-[rgb(32_45_40_/_40%)]">что нужно сделать.</span></h2>
+          <p className="inline-flex items-center gap-[10px] text-[10px] font-extrabold tracking-[1.8px] text-[rgb(32_45_40_/_62%)] uppercase max-[900px]:justify-center"><span className="size-[7px] rounded-full bg-[#a8c94a] shadow-[0_0_0_4px_rgb(168_201_74_/_16%)]" />Давайте обсудим</p>
+          <h2 className="mt-[22px] mb-[18px] text-[clamp(42px,5vw,68px)] leading-[1.02] font-extrabold tracking-[-.075em] max-[620px]:text-[clamp(40px,10vw,54px)]" id="contact-title">Расскажите,<br /><span className="text-[rgb(32_45_40_/_40%)]">что нужно сделать.</span></h2>
           <p className="mt-0 mb-0 max-w-[420px] text-[14px] leading-[1.85] text-[rgb(32_45_40_/_66%)] max-[900px]:mx-auto max-[620px]:max-w-[34ch]">
             Опишите задачу и оставьте телефон. Подскажем, с чего лучше начать.
           </p>

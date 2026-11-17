@@ -38,7 +38,7 @@ function Header() {
 
         <div className="flex items-center gap-[22px]">
           <a className="whitespace-nowrap text-xs font-bold max-[1050px]:hidden" href="tel:+79991234567">+7 (999) 123-45-67</a>
-          <a className="inline-flex min-h-11 items-center justify-center gap-[18px] rounded-full bg-forest px-[18px] text-[11px] font-extrabold !text-cream transition-[transform,background-color] duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#34483e] cursor-pointer max-[760px]:hidden" href="#contacts">
+          <a className="header-cta inline-flex min-h-11 items-center justify-center gap-[18px] rounded-full bg-forest px-[18px] text-[11px] font-extrabold !text-cream transition-[transform,background-color] duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#34483e] cursor-pointer max-[760px]:hidden" href="#contacts">
             Оставить заявку <ArrowUpRight size={16} strokeWidth={1.8} />
           </a>
           <button

@@ -14,7 +14,7 @@ function Advantages() {
         <div className="mb-14 flex items-end justify-between gap-12 max-[900px]:mb-[38px] max-[900px]:flex-col max-[900px]:items-center max-[900px]:gap-[18px] max-[900px]:text-center">
           <div>
             <p className="eyebrow text-[rgb(245_243_236_/_58%)] max-[900px]:justify-center"><span className="eyebrow__dot" />Почему FIXORA HOME</p>
-            <h2 className="mt-[22px]"><span className="text-lime">Хороший сервис —<br />это просто.</span></h2>
+            <h2 className="mt-[22px]">Хороший сервис —<br /><span className="text-lime">это просто.</span></h2>
           </div>
           <p className="mb-[6px] max-w-[410px] text-[14px] leading-[1.85] text-[rgb(245_243_236_/_65%)] max-[900px]:max-w-[560px] max-[900px]:text-center">
             Домашние дела не должны превращаться в отдельный проект.

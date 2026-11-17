@@ -26,7 +26,7 @@ function Footer() {
           <a className="inline-flex min-w-0 flex-col whitespace-nowrap" href="#top" aria-label="FIXORA.HOME — на главную">
             <span className="brand-wordmark text-[22px] font-extrabold tracking-[-1.5px] text-cream">FIXORA<span className="text-[#a6c93f]">.</span>HOME</span>
           </a>
-          <nav className="flex flex-wrap gap-6 max-[620px]:hidden" aria-label="Навигация в подвале">
+          <nav className="flex flex-wrap gap-6 max-[700px]:hidden" aria-label="Навигация в подвале">
             {footerNavigation.map((item) => <a className="footer-nav-link text-[11px] text-[rgb(245_243_236_/_58%)] transition-colors duration-200 hover:text-lime" href={item.href} key={item.href}>{item.label}</a>)}
           </nav>
           <span className="text-right text-[11px] text-[rgb(245_243_236_/_58%)] max-[620px]:col-start-2 max-[620px]:justify-self-end max-[620px]:whitespace-nowrap max-[620px]:text-[10px] max-[380px]:text-[9px]">© {new Date().getFullYear()} FIXORA.HOME</span>

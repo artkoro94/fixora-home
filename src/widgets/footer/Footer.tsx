@@ -8,37 +8,29 @@ const footerNavigation = [
 
 function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="site-footer__inner">
-        <div className="site-footer__contact">
-          <div className="site-footer__contact-copy">
-            <p className="eyebrow"><span className="eyebrow__dot" />На связи</p>
-            <h2>Есть задача<br /><span>для дома?</span></h2>
-            <p className="site-footer__description">
-              Расскажите, что нужно сделать. Обсудим детали и подскажем, с чего начать.
-            </p>
+    <footer className="bg-forest px-[5.5%] pt-[88px] pb-[26px] text-cream max-[900px]:px-[5%] max-[900px]:pt-[76px] max-[900px]:pb-6 max-[620px]:px-[22px] max-[620px]:pt-[68px] max-[620px]:pb-[22px] max-[900px]:min-[621px]:px-[6%] max-[900px]:min-[621px]:pt-[68px] max-[900px]:min-[621px]:pb-7 max-[620px]:pt-16" >
+      <div className="mx-auto max-w-[1440px]">
+        <div className="flex items-end justify-between gap-12 pb-[72px] max-[900px]:flex-col max-[900px]:items-center max-[900px]:gap-[30px] max-[900px]:pb-[54px] max-[900px]:text-center max-[620px]:gap-7 max-[620px]:pb-[42px] max-[900px]:min-[621px]:gap-[30px] max-[900px]:min-[621px]:pb-12">
+          <div className="max-w-[560px] max-[900px]:w-full">
+            <p className="eyebrow text-[rgb(245_243_236_/_58%)] max-[900px]:justify-center"><span className="eyebrow__dot" />На связи</p>
+            <h2 className="mt-[22px] mb-4 text-[clamp(44px,5.2vw,70px)] font-extrabold leading-[.98] tracking-[-.075em] max-[620px]:text-[clamp(42px,10vw,56px)] max-[620px]:text-[clamp(40px,10vw,52px)]">Есть задача<br /><span className="text-lime">для дома?</span></h2>
+            <p className="m-0 max-w-[430px] text-[14px] leading-[1.85] text-[rgb(245_243_236_/_65%)] max-[900px]:mx-auto max-[620px]:max-w-[34ch] max-[620px]:text-[13px]">Расскажите, что нужно сделать. Обсудим детали и подскажем, с чего начать.</p>
           </div>
-          <a className="site-footer__phone" href="tel:+79991234567">
-            <span><Phone size={18} strokeWidth={1.7} /></span>
-            <span>
-              <small>Позвонить нам</small>
-              <strong>+7 (999) 123-45-67</strong>
-            </span>
+          <a className="flex min-w-[300px] items-center gap-4 border-y border-[rgb(245_243_236_/_24%)] py-5 transition-colors duration-200 hover:text-lime max-[900px]:w-full max-[900px]:max-w-[440px] max-[900px]:min-w-0 max-[900px]:text-left max-[620px]:max-w-[420px] max-[620px]:gap-3 max-[900px]:min-[621px]:gap-[14px]" href="tel:+79991234567">
+            <span className="grid size-[46px] shrink-0 place-items-center rounded-full border border-[rgb(245_243_236_/_30%)]"><Phone size={18} strokeWidth={1.7} /></span>
+            <span className="grid flex-1 gap-[5px]"><small className="text-[11px] text-[rgb(245_243_236_/_55%)]">Позвонить нам</small><strong className="text-[17px] font-extrabold max-[620px]:text-[15px]">+7 (999) 123-45-67</strong></span>
             <ArrowUpRight size={20} />
           </a>
         </div>
-
-        <div className="site-footer__bottom">
-          <a className="brand site-footer__brand" href="#top" aria-label="FIXORA — на главную">
-            <span className="brand__name">FIXORA<span>.</span></span>
-            <span className="brand__caption">HOME SERVICE</span>
+        <div className="flex items-center justify-between gap-6 border-t border-[rgb(245_243_236_/_18%)] pt-6 max-[900px]:grid max-[900px]:grid-cols-[minmax(0,1fr)_auto] max-[900px]:gap-[22px_24px] max-[620px]:gap-[22px_12px] max-[620px]:pt-[22px] max-[380px]:gap-2">
+          <a className="brand site-footer__brand min-w-0 whitespace-nowrap" href="#top" aria-label="FIXORA — на главную">
+            <span className="brand__name text-cream">FIXORA<span className="text-[#a6c93f]">.</span></span>
+            <span className="brand__caption text-[rgb(245_243_236_/_50%)]">HOME SERVICE</span>
           </a>
-          <nav className="site-footer__nav" aria-label="Навигация в подвале">
-            {footerNavigation.map((item) => (
-              <a href={item.href} key={item.href}>{item.label}</a>
-            ))}
+          <nav className="hidden flex-wrap gap-6 max-[900px]:hidden" aria-label="Навигация в подвале">
+            {footerNavigation.map((item) => <a className="text-[11px] text-[rgb(245_243_236_/_58%)] transition-colors hover:text-lime" href={item.href} key={item.href}>{item.label}</a>)}
           </nav>
-          <span className="site-footer__copyright">© {new Date().getFullYear()} FIXORA HOME</span>
+          <span className="text-right text-[11px] text-[rgb(245_243_236_/_58%)] max-[900px]:col-start-2 max-[900px]:justify-self-end max-[900px]:whitespace-nowrap max-[620px]:text-[10px] max-[380px]:text-[9px]">© {new Date().getFullYear()} FIXORA HOME</span>
         </div>
       </div>
     </footer>

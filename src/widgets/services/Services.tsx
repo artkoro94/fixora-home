@@ -21,8 +21,7 @@ function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon
   const featured = service.variant === 'featured'
   return (
-    <article className={`service-card relative grid min-h-[370px] grid-rows-[auto_1fr_auto] grid-cols-1 gap-[26px] max-[900px]:grid-rows-[auto_auto] overflow-hidden border border-[rgb(32_45_40_/_9%)] p-[30px] transition-[transform,border-color] duration-[250ms] ease-out hover:-translate-y-1 hover:border-[rgb(32_45_40_/_24%)] max-[900px]:min-h-[360px] max-[900px]:min-w-0 max-[900px]:grid-cols-1 max-[900px]:p-6 max-[900px]:items-center max-[900px]:justify-start max-[900px]:text-center max-[620px]:!min-h-[310px] max-[620px]:!w-full max-[620px]:!max-w-full max-[620px]:!px-[22px] max-[620px]:!py-[22px] ${featured ? 'col-span-7 min-h-[410px] bg-forest text-cream max-[620px]:!min-h-[350px]' : 'col-span-4 bg-white text-forest'} max-[900px]:col-span-1 ${service.number === '02' ? 'col-span-5' : ''} ${service.number === '05' ? 'max-[900px]:col-span-2 max-[900px]:w-1/2 max-[900px]:justify-self-center max-[620px]:col-span-1 max-[620px]:w-full' : ''}`}>
-      <a className="service-card__overlay-link absolute inset-0 z-10 hidden max-[900px]:block" href="#contacts" aria-label={`Обсудить услугу: ${service.title}`} />
+    <a href="#contacts" aria-label={`Обсудить услугу: ${service.title}`} className={`service-card relative grid cursor-pointer min-h-[370px] grid-rows-[auto_1fr_auto] grid-cols-1 gap-[26px] max-[900px]:grid-rows-[auto_auto] overflow-hidden border border-[rgb(32_45_40_/_9%)] p-[30px] transition-[transform,border-color] duration-[250ms] ease-out hover:-translate-y-1 hover:border-[rgb(32_45_40_/_24%)] max-[900px]:min-h-[360px] max-[900px]:min-w-0 max-[900px]:grid-cols-1 max-[900px]:p-6 max-[900px]:items-center max-[900px]:justify-start max-[900px]:text-center max-[620px]:!min-h-[310px] max-[620px]:!w-full max-[620px]:!max-w-full max-[620px]:!px-[22px] max-[620px]:!py-[22px] ${featured ? 'col-span-7 min-h-[410px] bg-forest text-cream max-[620px]:!min-h-[350px]' : 'col-span-4 bg-white text-forest'} max-[900px]:col-span-1 ${service.number === '02' ? 'col-span-5' : ''} ${service.number === '05' ? 'max-[900px]:col-span-2 max-[900px]:w-1/2 max-[900px]:justify-self-center max-[620px]:col-span-1 max-[620px]:w-full' : ''}`}>
       <div className="flex items-start justify-between max-[900px]:justify-center">
         <span className={`grid h-12 w-12 place-items-center rounded-full border border-current opacity-[.82] ${featured ? 'border-[rgb(215_243_106_/_35%)] text-lime' : ''}`} aria-hidden="true"><Icon size={23} strokeWidth={1.65} /></span>
       </div>
@@ -33,10 +32,10 @@ function ServiceCard({ service }: { service: Service }) {
           {service.examples.map((example) => <li className="rounded-[2px] border border-current px-3 py-[9px] text-xs leading-[1.35] opacity-[.68] max-[900px]:max-w-full max-[900px]:[overflow-wrap:anywhere] max-[620px]:text-[11px]" key={example}>{example}</li>)}
         </ul>
       </div>
-      <a className={`service-card__link mt-0 inline-flex max-[900px]:hidden w-fit min-w-[190px] cursor-pointer items-center justify-between gap-[14px] self-end border-b border-current pb-[7px] text-[13px] font-extrabold transition-[gap] duration-200 hover:gap-[22px] max-[900px]:mx-auto max-[900px]:mt-7 max-[900px]:min-w-0 max-[900px]:max-w-full max-[900px]:justify-center max-[620px]:mx-auto max-[620px]:justify-center ${featured ? 'text-lime' : ''}`} href="#contacts" aria-label={`Обсудить услугу: ${service.title}`}>
+      <div className={`service-card__link mt-0 inline-flex max-[900px]:hidden w-fit min-w-[190px] cursor-pointer items-center justify-between gap-[14px] self-end border-b border-current pb-[7px] text-[13px] font-extrabold transition-[gap] duration-200 hover:gap-[22px] max-[900px]:mx-auto max-[900px]:mt-7 max-[900px]:min-w-0 max-[900px]:max-w-full max-[900px]:justify-center max-[620px]:mx-auto max-[620px]:justify-center ${featured ? 'text-lime' : ''}`} >
         Обсудить задачу <ArrowUpRight size={18} strokeWidth={1.7} />
-      </a>
-    </article>
+      </div>
+    </a>
   )
 }
 

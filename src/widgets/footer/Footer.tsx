@@ -17,8 +17,8 @@ function Footer() {
             <p className="m-0 max-w-[430px] text-[14px] leading-[1.85] text-[rgb(245_243_236_/_65%)] max-[700px]:mx-auto max-[700px]:max-w-[34ch] max-[700px]:text-[13px]">Расскажите, что нужно сделать. Обсудим детали и подскажем, с чего начать.</p>
           </div>
           <a className="footer-phone flex min-w-[300px] items-center gap-4 border-y border-[rgb(245_243_236_/_24%)] py-5 transition-colors duration-200 hover:text-lime max-[900px]:min-w-0 max-[900px]:gap-[14px] max-[700px]:w-full max-[700px]:max-w-[420px] max-[700px]:justify-center max-[700px]:gap-3" href="tel:+79991234567">
-            <span className="grid size-[46px] shrink-0 place-items-center rounded-full border border-[rgb(245_243_236_/_30%)]"><Phone size={18} strokeWidth={1.7} /></span>
-            <span className="grid flex-1 gap-[5px]"><small className="text-[11px] text-[rgb(245_243_236_/_55%)]">Позвонить нам</small><strong className="text-[17px] font-extrabold max-[620px]:text-[15px]">+7 (999) 123-45-67</strong></span>
+            <span className="grid size-[46px] shrink-0 place-items-center rounded-full border border-[rgb(245_243_236_/_30%)] max-[900px]:hidden"><Phone size={18} strokeWidth={1.7} /></span>
+            <span className="grid flex-1 gap-[5px] max-[900px]:flex-none max-[900px]:text-center"><small className="text-[11px] text-[rgb(245_243_236_/_55%)]">Позвонить нам</small><strong className="text-[17px] font-extrabold max-[620px]:text-[15px]">+7 (999) 123-45-67</strong></span>
           </a>
         </div>
         <div className="flex items-center justify-between gap-6 border-t border-[rgb(245_243_236_/_18%)] pt-6 max-[620px]:grid max-[620px]:grid-cols-[minmax(0,1fr)_auto] max-[620px]:gap-[22px_12px] max-[620px]:pt-[22px] max-[380px]:gap-2 [&_.brand__caption]:max-[380px]:text-[8px] [&_.brand__caption]:max-[380px]:tracking-[1px]">

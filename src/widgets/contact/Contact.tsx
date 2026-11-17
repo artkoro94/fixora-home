@@ -110,7 +110,7 @@ function Contact() {
             <input
               {...nameField}
               type="text"
-              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base"
+              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none focus-visible:outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base"
               placeholder="Ваше имя"
               autoComplete="name"
               aria-invalid={Boolean(errors.name)}
@@ -132,7 +132,7 @@ function Contact() {
                   }}
                   name={field.name}
                   type="tel"
-                  className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base"
+                  className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none focus-visible:outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base"
                   inputMode="numeric"
                   placeholder="+7 (___) ___-__-__"
                   autoComplete="tel"
@@ -150,7 +150,7 @@ function Contact() {
           <label className="grid gap-[9px]">
             <span className="text-[12px] font-extrabold">Направление работ</span>
             <select
-              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base cursor-pointer pr-12"
+              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none focus-visible:outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base cursor-pointer pr-12"
               {...serviceField}
               aria-invalid={Boolean(errors.service)}
               aria-describedby={errors.service ? 'contact-service-error' : undefined}
@@ -164,7 +164,7 @@ function Contact() {
           <label className="grid gap-[9px]">
             <span className="text-[12px] font-extrabold">Коротко о задаче</span>
             <textarea
-              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base min-h-[100px] resize-y"
+              className="w-full min-w-0 border border-[rgb(32_45_40_/_20%)] bg-transparent px-[15px] py-[14px] text-[13px] text-forest outline-none focus-visible:outline-none transition-[border-color,background] duration-200 placeholder:text-[rgb(32_45_40_/_42%)] focus:border-[#789c35] focus:bg-white aria-[invalid=true]:border-[#b42318] aria-[invalid=true]:bg-[rgb(180_35_24_/_3%)] aria-[invalid=true]:focus:border-[#b42318] max-[620px]:text-base min-h-[100px] resize-y"
               {...messageField}
               rows={3}
               placeholder="Что нужно сделать?"
@@ -174,7 +174,7 @@ function Contact() {
             {errors.message && <span className="text-[12px] leading-[1.5] text-[#b42318]" id="contact-message-error" role="alert">{errors.message.message}</span>}
           </label>
 
-          <button className="flex min-h-[54px] w-full items-center justify-center border-0 bg-forest px-[18px] text-[13px] font-extrabold text-cream transition-colors duration-200 hover:bg-[#34483e]" type="submit">
+          <button className="flex min-h-[54px] w-full cursor-pointer items-center justify-center border-0 bg-forest px-[18px] text-[13px] font-extrabold text-cream transition-colors duration-200 hover:bg-[#34483e]" type="submit">
             Отправить форму
           </button>
           <p className="-mt-2 mb-0 min-h-5 text-[11px] leading-[1.6] text-[rgb(32_45_40_/_55%)]">
@@ -193,7 +193,7 @@ function Contact() {
           >
             <div className="mx-auto mb-[22px] grid size-[58px] place-items-center rounded-full bg-lime" aria-hidden="true"><Check size={25} /></div>
             <button
-              className="absolute top-[14px] right-[14px] grid size-9 place-items-center border border-[rgb(32_45_40_/_14%)] bg-transparent text-current"
+              className="absolute top-[14px] right-[14px] grid size-9 cursor-pointer place-items-center border-0 bg-transparent text-current transition-colors duration-200 hover:bg-[rgb(32_45_40_/_6%)]"
               type="button"
               aria-label="Закрыть окно"
               onClick={() => setIsSuccessOpen(false)}
@@ -205,7 +205,7 @@ function Contact() {
             <p className="mt-[14px] mb-[26px] text-[13px] leading-[1.75] text-[rgb(32_45_40_/_68%)]" id="contact-success-description">
               Спасибо! Это демонстрационная версия сайта. Данные формы никуда не отправляются.
             </p>
-            <button className="min-h-[50px] w-full border-0 bg-forest text-[13px] font-extrabold text-cream hover:bg-[#34483e]" type="button" onClick={() => setIsSuccessOpen(false)}>
+            <button className="min-h-[50px] w-full cursor-pointer border-0 bg-forest text-[13px] font-extrabold text-cream hover:bg-[#34483e]" type="button" onClick={() => setIsSuccessOpen(false)}>
               Понятно
             </button>
           </dialog>

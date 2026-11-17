@@ -26,6 +26,26 @@ body { min-width: 320px; min-height: 100vh; margin: 0; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a[href], button:not(:disabled), select { cursor: pointer; }
+
+.header-nav-link {
+  transition: color 200ms ease;
+}
+.header-nav-link:hover {
+  color: #789c35;
+}
+
+.brand-wordmark {
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .service-card {
+    cursor: pointer;
+  }
+  .service-card__overlay-link {
+    cursor: pointer;
+  }
+}
 :focus-visible:not(input):not(textarea):not(select) { outline: 3px solid #789c35; outline-offset: 4px; }
 
 /* Explicit interaction states: keep them outside Tailwind's utility layers. */

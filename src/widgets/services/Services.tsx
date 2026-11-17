@@ -21,7 +21,7 @@ function ServiceCard({ service }: { service: Service }) {
   const Icon = service.icon
   const featured = service.variant === 'featured'
   return (
-    <article className={`relative grid min-h-[370px] grid-rows-[auto_1fr_auto] grid-cols-1 gap-[26px] overflow-hidden border border-[rgb(32_45_40_/_9%)] p-[30px] transition-[transform,border-color] duration-200 hover:-translate-y-1 hover:border-[rgb(32_45_40_/_24%)] max-[900px]:min-h-[390px] max-[900px]:min-w-0 max-[900px]:grid-cols-1 max-[900px]:p-6 max-[900px]:items-center max-[900px]:justify-start max-[900px]:text-center max-[620px]:!min-h-[310px] max-[620px]:!w-full max-[620px]:!max-w-full max-[620px]:!px-[22px] max-[620px]:!py-[22px] ${featured ? 'col-span-7 min-h-[410px] bg-forest text-cream max-[900px]:col-span-1 max-[620px]:!min-h-[350px]' : 'col-span-4 bg-white text-forest'} ${service.number === '02' ? 'col-span-5 max-[900px]:col-span-1' : ''}`}>
+    <article className={`relative grid min-h-[370px] grid-rows-[auto_1fr_auto] grid-cols-1 gap-[26px] overflow-hidden border border-[rgb(32_45_40_/_9%)] p-[30px] transition-[transform,border-color] duration-[250ms] ease-out hover:-translate-y-1 hover:border-[rgb(32_45_40_/_24%)] max-[900px]:min-h-[390px] max-[900px]:min-w-0 max-[900px]:grid-cols-1 max-[900px]:p-6 max-[900px]:items-center max-[900px]:justify-start max-[900px]:text-center max-[620px]:!min-h-[310px] max-[620px]:!w-full max-[620px]:!max-w-full max-[620px]:!px-[22px] max-[620px]:!py-[22px] ${featured ? 'col-span-7 min-h-[410px] bg-forest text-cream max-[900px]:col-span-1 max-[620px]:!min-h-[350px]' : 'col-span-4 bg-white text-forest'} ${service.number === '02' ? 'col-span-5 max-[900px]:col-span-1' : ''}`}>
       <div className="flex items-start justify-between max-[900px]:justify-center">
         <span className={`grid h-12 w-12 place-items-center rounded-full border border-current opacity-[.82] ${featured ? 'border-[rgb(215_243_106_/_35%)] text-lime' : ''}`} aria-hidden="true"><Icon size={23} strokeWidth={1.65} /></span>
       </div>
@@ -32,7 +32,7 @@ function ServiceCard({ service }: { service: Service }) {
           {service.examples.map((example) => <li className="rounded-[2px] border border-current px-3 py-[9px] text-xs leading-[1.35] opacity-[.68] max-[900px]:max-w-full max-[900px]:[overflow-wrap:anywhere] max-[620px]:text-[11px]" key={example}>{example}</li>)}
         </ul>
       </div>
-      <a className={`mt-0 inline-flex w-fit min-w-[190px] items-center justify-between gap-[14px] self-end border-b border-current pb-[7px] text-[13px] font-extrabold transition-[gap] duration-200 hover:gap-[22px] max-[900px]:mx-auto max-[900px]:mt-7 max-[900px]:inline-flex max-[900px]:min-w-0 max-[900px]:max-w-full max-[900px]:justify-center max-[620px]:mx-auto max-[620px]:justify-center ${featured ? 'text-lime' : ''}`} href="#contacts" aria-label={`Обсудить услугу: ${service.title}`}>
+      <a className={`mt-0 inline-flex w-fit min-w-[190px] cursor-pointer items-center justify-between gap-[14px] self-end border-b border-current pb-[7px] text-[13px] font-extrabold transition-[gap] duration-200 hover:gap-[22px] max-[900px]:mx-auto max-[900px]:mt-7 max-[900px]:inline-flex max-[900px]:min-w-0 max-[900px]:max-w-full max-[900px]:justify-center max-[620px]:mx-auto max-[620px]:justify-center ${featured ? 'text-lime' : ''}`} href="#contacts" aria-label={`Обсудить услугу: ${service.title}`}>
         Обсудить задачу <ArrowUpRight size={18} strokeWidth={1.7} />
       </a>
     </article>

@@ -18,16 +18,17 @@
 .service-card__content li { padding: 9px 12px; border: 1px solid currentColor; border-radius: 2px; color: currentColor; font-size: 12px; line-height: 1.35; opacity: .68; }
 .service-card__link { display: inline-flex; align-self: end; align-items: center; justify-content: space-between; gap: 14px; width: fit-content; min-width: 190px; padding-bottom: 7px; border-bottom: 1px solid currentColor; font-size: 13px; font-weight: 800; transition: gap .2s ease; }
 .service-card__link:hover { gap: 22px; }
-.service-card--featured .service-card__link { color: #d7f36a; }@media (max-width: 900px) {
+.service-card--featured .service-card__link { color: #d7f36a; }
+
+@media (max-width: 900px) {
   .services-section { padding: 88px 5% 30px; }
   .services-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 36px; }
   .services-heading__description { max-width: 560px; }
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .services-grid > .service-card { min-width: 0; grid-column: span 1; min-height: 390px; padding: 24px; }
   .service-card__link { min-width: 0; max-width: 100%; }
-  .service-card { gap: 26px; }
   .service-card__content { min-width: 0; }
-  .service-card__link { margin-top: 0; }}
+  }
 @media (max-width: 620px) {
   .services-section { padding: 76px 22px 28px; }
   .services-heading h2 { font-size: clamp(40px, 10vw, 54px); }
@@ -40,9 +41,6 @@
   .service-card__content h3 { font-size: 28px; }
   .service-card__content p { font-size: 14px; }
   .service-card__content li { font-size: 11px; }}
-@media (prefers-reduced-motion: reduce) {
-  .service-card, .service-card__link { transition: none; }
-}
 
 
 /* Centered service help card */
@@ -57,7 +55,4 @@
   .services-contact-card { flex-wrap: wrap; justify-content: flex-start; gap: 12px 16px; margin-top: 18px; padding: 20px; }
   .services-contact-card__copy { flex: 1 1 calc(100% - 44px); }
   .services-contact-card > a { margin-left: 37px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .services-contact-card > a { transition: none; }
 }

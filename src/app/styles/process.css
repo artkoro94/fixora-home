@@ -47,6 +47,3 @@
   .process-step__content { width: 100%; }
   .process-step p { margin-right: auto; margin-left: auto; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .process-heading__aside a, .process-step__icon, .process-step__connector { transition: none; }
-}

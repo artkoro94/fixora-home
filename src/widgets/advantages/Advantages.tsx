@@ -13,8 +13,8 @@ function Advantages() {
       <div className="mx-auto max-w-[1440px]">
         <div className="mb-14 flex items-end justify-between gap-12 max-[900px]:mb-[38px] max-[900px]:flex-col max-[900px]:items-center max-[900px]:gap-[18px] max-[900px]:text-center">
           <div>
-            <p className="eyebrow text-[rgb(245_243_236_/_58%)] max-[900px]:justify-center"><span className="eyebrow__dot" />Почему FIXORA HOME</p>
-            <h2 className="mt-[22px]">Хороший сервис —<br /><span className="text-lime">это просто.</span></h2>
+            <p className="inline-flex items-center gap-[10px] text-[10px] font-extrabold tracking-[1.8px] text-[rgb(245_243_236_/_58%)] uppercase max-[900px]:justify-center"><span className="size-[7px] rounded-full bg-[#a8c94a] shadow-[0_0_0_4px_rgb(168_201_74_/_16%)]" />Почему FIXORA HOME</p>
+            <h2 className="mt-[22px] text-[clamp(42px,5vw,68px)] leading-[1.02] font-extrabold tracking-[-.075em] max-[620px]:text-[clamp(40px,10vw,54px)]">Хороший сервис —<br /><span className="text-lime">это просто.</span></h2>
           </div>
           <p className="mb-[6px] max-w-[410px] text-[14px] leading-[1.85] text-[rgb(245_243_236_/_65%)] max-[900px]:max-w-[560px] max-[900px]:text-center">
             Домашние дела не должны превращаться в отдельный проект.

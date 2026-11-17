@@ -41,33 +41,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .skip-link:focus { transform: translateY(0); }
 
-.services-section__inner,
-.advantages-section__inner,
-.process-section__inner,
-.site-footer__inner {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-.services-heading,
-.advantages-heading,
-.process-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 48px;
-}
-
-.services-heading h2,
-.advantages-heading h2,
-.process-heading h2,
-.contact-heading h2 {
-  font-size: clamp(42px, 5vw, 68px);
-  font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -.075em;
-}
-
 .brand__name { color: #202d28; }
 .brand__name span { color: #a6c93f; }
 .brand__caption { color: rgb(32 45 40 / 55%); }

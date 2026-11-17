@@ -8,7 +8,7 @@ const footerNavigation = [
 
 function Footer() {
   return (
-    <footer className="bg-forest px-[5.5%] pt-[88px] pb-[26px] text-cream max-[900px]:px-[5%] max-[900px]:pt-[76px] max-[900px]:pb-6 max-[620px]:px-[22px] max-[620px]:pt-[68px] max-[620px]:pb-[22px] max-[900px]:min-[621px]:px-[6%] max-[900px]:min-[621px]:pt-[68px] max-[900px]:min-[621px]:pb-7 max-[620px]:pt-16" >
+    <footer className="site-footer bg-forest px-[5.5%] pt-[88px] pb-[26px] text-cream max-[900px]:px-[5%] max-[900px]:pt-[76px] max-[900px]:pb-6 max-[620px]:px-[22px] max-[620px]:pt-[68px] max-[620px]:pb-[22px] max-[900px]:min-[621px]:px-[6%] max-[900px]:min-[621px]:pt-[68px] max-[900px]:min-[621px]:pb-7 max-[620px]:pt-16" >
       <div className="mx-auto max-w-[1440px]">
         <div className="flex items-end justify-between gap-12 pb-[72px] max-[900px]:grid max-[900px]:grid-cols-[minmax(0,1fr)_minmax(240px,300px)] max-[900px]:items-center max-[900px]:gap-7 max-[900px]:pb-12 max-[700px]:flex max-[700px]:flex-col max-[700px]:items-center max-[700px]:gap-7 max-[700px]:pb-[42px] max-[700px]:text-center">
           <div className="max-w-[560px] max-[900px]:w-auto max-[700px]:w-full">

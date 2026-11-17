@@ -25,6 +25,7 @@ html { scroll-behavior: smooth; }
 body { min-width: 320px; min-height: 100vh; margin: 0; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
+a[href], button:not(:disabled), select { cursor: pointer; }
 :focus-visible { outline: 3px solid #789c35; outline-offset: 4px; }
 
 .skip-link {

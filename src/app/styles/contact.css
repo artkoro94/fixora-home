@@ -39,9 +39,6 @@
   .contact-form { gap: 18px; padding: 22px; }
   .contact-field input, .contact-field select, .contact-field textarea { font-size: 16px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .contact-details > a > svg:last-child, .contact-field input, .contact-field select, .contact-field textarea, .contact-form__submit { transition: none; }
-}
 
 /* Contact form validation and select control */
 
@@ -136,7 +133,4 @@
 .contact-success-dialog__action:hover { background: #34483e; }
 @media (max-width: 620px) {
   .contact-success-dialog { padding: 34px 24px 26px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .contact-success-dialog__action { transition: none; }
 }

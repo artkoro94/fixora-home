@@ -46,7 +46,16 @@ a[href], button:not(:disabled), select { cursor: pointer; }
   transition-duration: 200ms;
 }
 
-.header-cta:hover,
+.header-cta:hover {
+  transform: translateY(-2px);
+  background-color: #34483e;
+}
+
+.header-phone:hover,
+.footer-phone:hover {
+  color: #d7f36a;
+}
+
 .contact-submit:hover,
 .contact-success-action:hover {
   background-color: #34483e;

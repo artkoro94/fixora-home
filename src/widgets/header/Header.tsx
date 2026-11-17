@@ -63,7 +63,7 @@ function Header() {
         <nav className="grid px-[22px] pt-[10px] pb-6" aria-label="Мобильная навигация">
           {navigation.map((item) => (
             <a className="header-nav-link flex items-center justify-between border-b border-[rgb(32_45_40_/_9%)] py-4 text-sm font-bold" href={item.href} key={item.href} onClick={closeMenu}>
-              {item.label}<ArrowUpRight size={18} />
+              {item.label}
             </a>
           ))}
           <a className="justify-start border-0 pt-[22px] text-[rgb(32_45_40_/_60%)]" href="tel:+79991234567" onClick={closeMenu}>

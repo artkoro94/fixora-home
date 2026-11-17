@@ -33,7 +33,7 @@ function ServiceCard({ service }: { service: Service }) {
           {service.examples.map((example) => <li className="rounded-[2px] border border-current px-3 py-[9px] text-xs leading-[1.35] opacity-[.68] max-[900px]:max-w-full max-[900px]:[overflow-wrap:anywhere] max-[620px]:text-[11px]" key={example}>{example}</li>)}
         </ul>
       </div>
-      <a className={`service-card__link mt-0 inline-flex max-[900px]:hidden w-fit min-w-[190px] cursor-pointer items-center justify-between gap-[14px] self-end border-b border-current pb-[7px] text-[13px] font-extrabold transition-[gap] duration-200 hover:gap-[22px] max-[900px]:mx-auto max-[900px]:mt-7 max-[900px]:inline-flex max-[900px]:min-w-0 max-[900px]:max-w-full max-[900px]:justify-center max-[620px]:mx-auto max-[620px]:justify-center ${featured ? 'text-lime' : ''}`} href="#contacts" aria-label={`Обсудить услугу: ${service.title}`}>
+      <a className={`service-card__link mt-0 inline-flex max-[900px]:hidden w-fit min-w-[190px] cursor-pointer items-center justify-between gap-[14px] self-end border-b border-current pb-[7px] text-[13px] font-extrabold transition-[gap] duration-200 hover:gap-[22px] max-[900px]:mx-auto max-[900px]:mt-7 max-[900px]:min-w-0 max-[900px]:max-w-full max-[900px]:justify-center max-[620px]:mx-auto max-[620px]:justify-center ${featured ? 'text-lime' : ''}`} href="#contacts" aria-label={`Обсудить услугу: ${service.title}`}>
         Обсудить задачу <ArrowUpRight size={18} strokeWidth={1.7} />
       </a>
     </article>
